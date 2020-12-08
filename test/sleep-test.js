@@ -17,7 +17,35 @@ describe('SleepRepo and UserSleep', () => {
     sleepRepo = new SleepRepo(sleepData);
   })
 
+  it('Should be an instance of SleepRepo', () => {
+
+  })
+
   it('', () => {
-    
+
+  })
+
+  it('', () => {
+
+  })
+
+  it('', () => {
+
+  })
+
+  it('', () => {
+
+  })
+
+  it('', () => {
+
+  })
+
+  it('', () => {
+
+  })
+
+  it('', () => {
+
   })
 })

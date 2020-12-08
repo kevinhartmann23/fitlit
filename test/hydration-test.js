@@ -14,7 +14,7 @@ describe('HydrationRepo and UserHydration', () => {
   let hydrationTestResults;
   let hydrationTestResultsWeekly;
 
-  beforeEach('Should create instance of UserRepo and User, and provide user data', () => {
+  beforeEach('Should create instance of HydrationRepo and UserHydration, and provide user data', () => {
     data = testData['hydrationData']
     hydrationRepo = new HydrationRepo(data)
     hydrationTestResults = [{"userID": 1,"date": "2019/06/15","numOunces": 37}, {"userID": 1,"date": "2019/06/16","numOunces": 69}, {"userID": 1,"date": "2019/06/17","numOunces": 96}]
@@ -49,13 +49,13 @@ describe('HydrationRepo and UserHydration', () => {
 
     it('Should return ounces consumed in a specified week by given date', () => {
       expect(userHydrationWeekly.getWeeklyHydration("2019/06/15")).to.deep.equal({
-  'Sat Jun 15 2019 00:00:00 GMT-0600 (Mountain Daylight Time)': 37,
-  'Sun Jun 16 2019 00:00:00 GMT-0600 (Mountain Daylight Time)': 69,
-  'Mon Jun 17 2019 00:00:00 GMT-0600 (Mountain Daylight Time)': 96,
-  'Tue Jun 18 2019 00:00:00 GMT-0600 (Mountain Daylight Time)': 86,
-  'Wed Jun 19 2019 00:00:00 GMT-0600 (Mountain Daylight Time)': 76,
-  'Thu Jun 20 2019 00:00:00 GMT-0600 (Mountain Daylight Time)': 66,
-  'Fri Jun 21 2019 00:00:00 GMT-0600 (Mountain Daylight Time)': 56
-  })
+        '2019/06/15': 37,
+        '2019/06/16': 69,
+        '2019/06/17': 96,
+        '2019/06/18': 86,
+        '2019/06/19': 76,
+        '2019/06/20': 66,
+        '2019/06/21': 56
+      })
     })
 })

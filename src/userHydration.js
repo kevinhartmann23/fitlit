@@ -24,10 +24,10 @@ class UserHydration {
       let currentWeekday = day.date.split('/')
       let newWeekday = new Date(currentWeekday[0], currentWeekday[1] - 1, currentWeekday[2])
       if ((startDate <= currentDay) && (currentDay <= endDate)) {
-        weeklyHydration[newWeekday] = day.numOunces
+        weeklyHydration[day.date] = day.numOunces
       }
     })
-    return weeklyHydration
+    return weeklyHydration;
   }
 
 }

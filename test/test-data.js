@@ -71,59 +71,6 @@ const activityData = [
       "flightsOfStairs": 32
     }]
 
-<<<<<<< HEAD
-const hydrationData = [
-  {
-      "userID": 1,
-      "date": "2019/06/15",
-      "numOunces": 37
-  },
-  {
-      "userID": 2,
-      "date": "2019/06/15",
-      "numOunces": 75
-  },
-  {
-      "userID": 3,
-      "date": "2019/06/15",
-      "numOunces": 47
-  },
-  {
-      "userID": 4,
-      "date": "2019/06/15",
-      "numOunces": 85
-  },
-  {
-      "userID": 5,
-      "date": "2019/06/15",
-      "numOunces": 42
-  },
-  {
-      "userID": 6,
-      "date": "2019/06/15",
-      "numOunces": 87
-  },
-  {
-      "userID": 7,
-      "date": "2019/06/15",
-      "numOunces": 94
-  },
-  {
-      "userID": 8,
-      "date": "2019/06/15",
-      "numOunces": 84
-  },
-  {
-      "userID": 9,
-      "date": "2019/06/15",
-      "numOunces": 39
-    },
-  {
-      "userID": 10,
-      "date": "2019/06/15",
-      "numOunces": 75
-}]
-
 const sleepData = [
   {
     "userID": 1,
@@ -251,7 +198,7 @@ const sleepData = [
     "hoursSlept": 8.9,
     "sleepQuality": 3.7
   }]
-=======
+
     const hydrationData = [
       {
         "userID": 1,
@@ -283,16 +230,9 @@ const sleepData = [
         "date": "2019/06/17",
         "numOunces": 96
       }]
->>>>>>> main
+
 
 module.exports = {userData, hydrationData, sleepData }
 
-<<<<<<< HEAD
+
   // activityData
-=======
-module.exports = {userData, hydrationData}
-  // ,
-  // activityData,
-  // hydrationData,
-  // sleepData
->>>>>>> main
