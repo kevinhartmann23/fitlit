@@ -88,39 +88,19 @@ const activityData = [
         "numOunces": 47
       },
       {
-        "userID": 4,
-        "date": "2019/06/15",
-        "numOunces": 85
+        "userID": 1,
+        "date": "2019/06/16",
+        "numOunces": 69
       },
       {
-        "userID": 5,
-        "date": "2019/06/15",
-        "numOunces": 42
+        "userID": 2,
+        "date": "2019/06/16",
+        "numOunces": 91
       },
       {
-        "userID": 6,
-        "date": "2019/06/15",
-        "numOunces": 87
-      },
-      {
-        "userID": 7,
-        "date": "2019/06/15",
-        "numOunces": 94
-      },
-      {
-        "userID": 8,
-        "date": "2019/06/15",
-        "numOunces": 84
-      },
-      {
-        "userID": 9,
-        "date": "2019/06/15",
-        "numOunces": 39
-      },
-      {
-        "userID": 10,
-        "date": "2019/06/15",
-        "numOunces": 75
+        "userID": 1,
+        "date": "2019/06/17",
+        "numOunces": 96
       }]
 
       const sleepData = [
@@ -161,7 +141,7 @@ const activityData = [
           "sleepQuality": 2.9
         }]
 
-module.exports = {userData}
+module.exports = {userData, hydrationData}
   // ,
   // activityData,
   // hydrationData,
