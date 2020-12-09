@@ -23,7 +23,7 @@ class UserHydration {
       let currentDay = Date.parse(day['date'])
       let currentWeekday = day.date.split('/')
       let newWeekday = new Date(currentWeekday[0], currentWeekday[1] - 1, currentWeekday[2])
-      if ((startDate <= currentDay) && (currentDay <= endDate)) {
+      if ((startDate <= currentDay) && (currentDay < endDate)) {
         weeklyHydration[day.date] = day.numOunces
       }
     })

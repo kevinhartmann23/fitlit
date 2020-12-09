@@ -71,6 +71,7 @@ const activityData = [
       "flightsOfStairs": 32
     }]
 
+
 const sleepData = [
   {
     "userID": 1,
@@ -183,7 +184,7 @@ const sleepData = [
   {
     "userID": 1,
     "date": "2019/06/21",
-    "hoursSlept": 7.8,
+    "hoursSlept": 8.9,
     "sleepQuality": 4.2
   },
   {
