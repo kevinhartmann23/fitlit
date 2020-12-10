@@ -23,15 +23,15 @@ class UserActivity {
   }
 
   getWeeklyAverage(date) {
+    const endDate = Date.parse(date) - 604800000
     const startDate = Date.parse(date)
-    const endDate = startDate + 604800000
     let weeklyActivity = 0
     let numDays = 0
     this.data.forEach(day => {
       let currentDay = Date.parse(day['date'])
       let currentWeekday = day.date.split('/')
       numDays++
-      if ((startDate <= currentDay) && (currentDay <= endDate)) {
+      if ((startDate < currentDay) && (currentDay <= endDate)) {
         weeklyActivity += day.minutesActive
       }
     })
