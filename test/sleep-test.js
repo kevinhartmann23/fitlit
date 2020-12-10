@@ -78,8 +78,7 @@ describe('SleepRepo and UserSleep', () => {
   })
 
   it('Should return all users sleep quality that is greater than 3 in a given week', () => {
-    expect(sleepRepo.getSleepQualityOver3("2019/06/15")).to.deep.equal([])
-    //revist with hard data, how to get week and what to output
+    expect(sleepRepo.getSleepQualityOver3("2019/06/21")).to.deep.equal([2, 3])
   })
 
   it('Should return a user who slept the most hours on a given day', () => {
@@ -128,7 +127,7 @@ describe('SleepRepo and UserSleep', () => {
         "sleepQuality": 4.2
       });
 
-    expect(userSleep.getHoursTotalByWeek("2019/06/15")).to.equal(57.5)
+    expect(userSleep.getHoursTotalByWeek("2019/06/21")).to.equal(57.5)
   })
 
   it('Should return a single users sleep quality for any given week span', () => {
@@ -139,14 +138,14 @@ describe('SleepRepo and UserSleep', () => {
         "sleepQuality": 4.2
       });
 
-    expect(userSleep.getWeekQuality("2019/06/16")).to.deep.equal({
-        '2019/06/16': 3.8,
-        '2019/06/17': 2.6,
-        '2019/06/18': 3.1,
-        '2019/06/19': 1.2,
-        '2019/06/20': 1.2,
-        '2019/06/21': 4.2,
-        '2019/06/22': 4.2,
+    expect(userSleep.getWeekQuality("2019/06/22")).to.deep.equal({
+      '2019/06/22': 4.2,
+      '2019/06/21': 4.2,
+      '2019/06/20': 1.2,
+      '2019/06/19': 1.2,
+      '2019/06/18': 3.1,
+      '2019/06/17': 2.6,
+      '2019/06/16': 3.8,
       });
   })
 })
