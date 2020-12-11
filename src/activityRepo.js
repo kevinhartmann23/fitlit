@@ -21,3 +21,9 @@ class ActivityRepo {
 if (typeof module !== 'undefined') {
   module.exports = ActivityRepo
 }
+
+
+let highestArray = this.data.filter(day => day.date === date)
+  .sort((a, b) => return b.hoursSlept - a.hoursSlept)
+  .map(day => {
+})
