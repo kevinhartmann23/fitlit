@@ -1,47 +1,63 @@
 body {
   height: 100%;
   width: 100%;
-  margin: 0;
-  background-color: lightblue;
+  margin: 0em;
+  background-color: #708aa9;
 }
 
 
 .navigation-bar {
-  background-color: red;
+  background-color: lightgrey;
+  position: fixed;
   display: inline-block;
   width: 100%;
-  height: 2em
+  height: 4em;
 }
 
 
-ul {
+.nav-icons {
   display: flex;
   justify-content: flex-end;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin: 0em;
+  padding: 0em;
 }
 
 #logo {
   display: flex;
   position: fixed;
-  width: 2em;
+  height: 4em;
+  width: 3em;
   margin-left: 1em
 }
 
 .dropdown-menu,
-li {
-  height: 2em;
-  width: 1.5em;
+.icons {
+  height: 4em;
+  width: 3em;
   padding: 0 1em;
   margin: 0 .5em 0 .5em;
-  background-color: grey;
   text-align: center;
 }
 
+.sneaker {
+  height: 3.5em;
+}
 
-li:hover {
-  box-shadow : inset 0px 0px 6px;
+.water:hover {
+  content: url("../assets/imgs/water-glass-blue.png");
+}
+
+.sneaker:hover {
+  content: url("../assets/imgs/sneakers-red.png")
+}
+
+.bed:hover {
+  content: url("../assets/imgs/empty-bed-purple.png")
+}
+
+
+.icons:hover {
   cursor: pointer;
 }
 
@@ -49,33 +65,71 @@ li:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 2;
 }
 
 .dropdown-menu:hover .dropdown-content {
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .dropdown-content {
   display: none;
   background-color: lightgrey;
-  margin-top: .4em;
+  cursor: pointer;
+  height: 100%;
 }
 
 .dropdown-item {
-  align-self: flex-end;
-  width: 100%;
-  text-align: center;
-  font-size: .8em;
+  font-size: 1.25em;
+  border: none;
+}
+
+.dropdown-item:hover {
   box-shadow: inset 0px 0px 4px
 }
 
 .welcome-page {
-  position: fixed;
   text-align: center;
   left: 50%;
   top: 30%;
-  padding: 2em 2em 5em;
-  border-style: double;
-  border-width: .5em;
+  padding: 2em 5em;
+  color: rgba(255, 255, 255, .75);
+}
+
+.welcome-image {
+  margin-top: 4em;
+}
+
+h2 {
+  font-size: 3em;
+  margin-top: 0em;
+}
+
+.username-input {
+  height: 2em;
+  width: 20em;
+  border-radius: .25em;
+  background-color: #708aa9;
+  font-size: 1.5em;
+  opacity: 95%;
+  color: rgba(255, 255, 255, .75);
+}
+
+.username-input::placeholder{
+  color: #ffffff;
+  font-size: 1em;
+  opacity: 50%;
+}
+
+.submit-button {
+  outline: none;
+  height: 3em;
+  width: 15em;
+  border-radius: 1em;
+  background-color: #899991;
+  margin-top: 1em;
+  font-size: 1.25em;
+  color: rgba(255, 255, 255, .75);
 }
