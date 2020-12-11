@@ -4,29 +4,30 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href = "styles.css">
     <title>fitZen</title>
+    <link rel="icon" href="../assets/imgs/logo-man.ico">
   </head>
   <body>
     <nav class="navigation-bar">
-      <div id="logo">🟢</div>
-      <ul>
-        <li id="">💧</li>
-        <li id="">🏃‍♀️</li>
-        <li id="">💤</li>
-        <li class="dropdown-menu">🍔
+      <div id="logo"><img id="logo" src="../assets/imgs/logo-man.ico" alt="fitZen Man"/></div>
+      <div class="nav-icons">
+        <img class="icons water" id="water-empty" src="../assets/imgs/water-glass-grey.png" alt="view hydration info"/>
+        <img class="icons sneaker" id="sneaker-empty" src="../assets/imgs/sneakers-grey.png" alt="view activity info"/>
+        <img class="icons bed" id="bed-empty" src="../assets/imgs/empty-bed-grey.png" alt="view sleep info"/>
+        <div class="dropdown-menu">
+          <img id="menu-hamburger" src="../assets/imgs/menu-icon.png" alt="menu"/>
           <div class="dropdown-content">
             <span class="dropdown-item" id="user-info">Account</span>
             <span class="dropdown-item" id="logout">Logout</span>
-          <div>
-        </li>
-      </ul>
+          </div>
+        </div>
+      </div>
     </nav>
     <div class="welcome-page">
-      <img src="a" class="welcome-image" alt="🟢">
-      <p>FitLit</p>
-      <p>User Name</p>
-      <input type="text" id="user-name-entry" placeholder="Luisa Hane">
+      <img class="welcome-image" src="../assets/imgs/login-man.png" alt="fitZen Man"/>
+      <h2>fitZen</h2>
+      <input class="username-input" type="text" id="user-name-entry" placeholder="username">
       <br>
-      <button class="user-name-submit">Login</button>
+      <button class="submit-button">login</button>
     </div>
     <div class="main-page">
 
