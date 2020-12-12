@@ -2,32 +2,32 @@ let weeklyChart = document.getElementById('weekly').getContext('2d');
 let averageChart = document.getElementById('average').getContext('2d');
 
 
-
-function createWeeklyChart(data, dataName, date) {
-  let weeklyData = currentUser.userDataSets[dataName].getWeekly(date)
+function createWeeklyChart(dataName, date) {
+  let weeklyData = currentUser.dataSets[dataName].getWeekly(date)
   let newWeekly = new Chart(weeklyChart, {
     type: 'bar',
     data: {
       labels: Object.keys(weeklyData),
       datasets : [{
-        label: `${dataName} for the week of ${Object.keys(weeklyData)[0]}`,
+        label: `daily ${dataName} - week starting on: ${Object.keys(weeklyData)[0]}`,
         data : Object.values(weeklyData),
-        backgroundColor: '#7190B9'
+        backgroundColor: 'lightgrey',
       }]
     },
     options: {
       title : {
-        text: `Weekly ${dataName}`,
+        text: `weekly ${dataName}`,
         display : true
       }
     }
   })
+  Chart.defaults.global.defaultFontColor = 'black';
 }
 
 function createAverageSleepChart() {
   let averages = []
-  averages.push(currentUser.userDataSets.Sleep.getAverage('hoursSlept'))
-  averages.push(currentUser.userDataSets.Sleep.getAverage('sleepQuality'))
+  averages.push(currentUser.dataSets.Sleep.getAverage('hoursSlept'))
+  averages.push(currentUser.dataSets.Sleep.getAverage('sleepQuality'))
   let newAverage = new Chart(averageChart, {
     type: 'bar',
     data: {
@@ -53,9 +53,9 @@ function createAverageSleepChart() {
 
 function createAverageActivityChart() {
   let averages = []
-  averages.push(currentUser.userDataSets.Activity.getAverage('numSteps'))
-  averages.push(currentUser.userDataSets.Activity.getAverage('minutesActive'))
-  averages.push(currentUser.userDataSets.Activity.getAverage('flightsOfStairs'))
+  averages.push(currentUser.dataSets.Activity.getAverage('numSteps'))
+  averages.push(currentUser.dataSets.Activity.getAverage('minutesActive'))
+  averages.push(currentUser.dataSets.Activity.getAverage('flightsOfStairs'))
   let newAverage = new Chart(averageChart, {
     type: 'bar',
     data: {

@@ -1,19 +1,33 @@
-body {
-  height: 100%;
-  width: 100%;
-  margin: 0em;
-  background-color: #708aa9;
+* {
+  Margin:0;
+  Padding:0;
+  Border:0;
 }
 
+html {
+  height: 100vh;
+  width: 100vw;
+  margin: 0em;
+}
 
+body {
+  margin: 0em;
+  background-color: #708aa9;
+  color: rgba(255, 255, 255, .75);
+}
+
+.hidden {
+  display: none !important;
+}
+/* login page */
 .navigation-bar {
   background-color: lightgrey;
   position: fixed;
+  top: 0;
   display: inline-block;
   width: 100%;
-  height: 4em;
+  height: 4.25em;
 }
-
 
 .nav-icons {
   display: flex;
@@ -95,7 +109,6 @@ body {
   left: 50%;
   top: 30%;
   padding: 2em 5em;
-  color: rgba(255, 255, 255, .75);
 }
 
 .welcome-image {
@@ -114,7 +127,6 @@ h2 {
   background-color: #708aa9;
   font-size: 1.5em;
   opacity: 95%;
-  color: rgba(255, 255, 255, .75);
 }
 
 .username-input::placeholder{
@@ -131,5 +143,68 @@ h2 {
   background-color: #899991;
   margin-top: 1em;
   font-size: 1.25em;
-  color: rgba(255, 255, 255, .75);
+}
+
+/* hydration page */
+.hydration-page{
+  margin-top: 5em;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 2fr 2fr;
+  grid-template-areas:
+  "friendsbox dailybox weeklybox"
+  "friendsbox chartbox infobox"
+  "friendsbox chartbox logobox";
+}
+
+.friends-sidebar {
+  background-color: #899991;
+  grid-area: friendsbox;
+  min-width: 300px;
+  height: 92.5vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+}
+
+h3 {
+  font-size: 3em;
+  grid-template: logobox;
+  margin-bottom: .5em;
+}
+
+.hydration-man {
+  grid-template: infobox;
+  height: 20em;
+  width: 20em;
+}
+.friend-section {
+  align-content: flex-start;
+  /* margin: 1.5em; */
+}
+
+.user-icon {
+  height: 3em;
+  width: 3em;
+  margin: 0em;
+}
+
+.friend-name {
+  /* display: inline; */
+  font-size: 2em;
+  height: 1em;
+  width: 10em;
+}
+
+.friend-info {
+  height: 2em;
+  width: 15em;
+}
+
+.chart-container {
+  padding: 3em;
+  height: 20em;
+  width: 40em;
+  grid-area: chartbox;
 }
