@@ -26,7 +26,7 @@ body {
   top: 0;
   display: inline-block;
   width: 100%;
-  height: 4em;
+  height: 4.25em;
 }
 
 .nav-icons {
@@ -152,7 +152,7 @@ h2 {
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 2fr 2fr;
   grid-template-areas:
-  "friendsbox message infobox"
+  "friendsbox dailybox weeklybox"
   "friendsbox chartbox infobox"
   "friendsbox chartbox logobox";
 }
@@ -160,18 +160,18 @@ h2 {
 .friends-sidebar {
   background-color: #899991;
   grid-area: friendsbox;
-  font-weight: bold;
   min-width: 300px;
   height: 92.5vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-content: center;
+  text-align: center;
 }
 
 h3 {
   font-size: 3em;
-  text-align: center;
-  grid-template: infobox;
+  grid-template: logobox;
+  margin-bottom: .5em;
 }
 
 .hydration-man {
@@ -181,7 +181,7 @@ h3 {
 }
 .friend-section {
   align-content: flex-start;
-  margin: 1.5em;
+  /* margin: 1.5em; */
 }
 
 .user-icon {
@@ -191,22 +191,20 @@ h3 {
 }
 
 .friend-name {
-  display: inline;
+  /* display: inline; */
   font-size: 2em;
   height: 1em;
   width: 10em;
-  margin-top: 1em;
-  margin-bottom: 6em;
 }
 
 .friend-info {
   height: 2em;
   width: 15em;
-  margin: .5em;
 }
 
-.weekly-hydration {
+.chart-container {
   padding: 3em;
-  height: 35vh;
-  width: 35vw;
+  height: 20em;
+  width: 40em;
+  grid-area: chartbox;
 }

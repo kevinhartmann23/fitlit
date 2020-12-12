@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href = "styles.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <title>fitZen</title>
     <link rel="icon" href="../assets/imgs/logo-man.ico">
   </head>
@@ -22,7 +24,7 @@
         </div>
       </div>
     </nav>
-    <div class="welcome-page">
+    <div class="welcome-page hidden">
       <img class="welcome-image" src="../assets/imgs/login-man.png" alt="fitZen Man"/>
       <h2>fitZen</h2>
       <input class="username-input" type="text" id="user-name-entry" placeholder="username">
@@ -31,12 +33,14 @@
     </div>
     <div class="main-page hidden">
     </div>
-    <div class="hydration-page hidden">
+    <div class="hydration-page">
       <section class="friends-sidebar">
         <h3>friends</h3>
         <div class="friend-section">
           <img class="user-icon" src="../assets/imgs/user-icon.png" alt="user"/>
+          <br>
           <p class="friend-name">friend 1</p>
+          <br>
           <p class="friend-info">water consumed this week: 1000oz</p>
         </div>
         <div class="friend-section">
@@ -62,7 +66,9 @@
       </section>
       <h3>keep on chuggling along, user!</h3>
       <img class="hydration-man" src="../assets/imgs/man-hydra.png" alt="logo hyrdation"/>
-      <canvas class="weekly-hydration" id="weekly"></canvas>
+      <div class="chart-container">
+        <canvas class="weekly-hydration" id="weekly"></canvas>
+      </div>
       <div class="circle-display" id="hydration-today">
         <div></div>
       </div>

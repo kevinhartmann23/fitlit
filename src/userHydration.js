@@ -15,9 +15,9 @@ class UserHydration {
     return foundDay.numOunces
   }
 
-  getWeeklyHydration(date) {
-    const endDate = Date.parse(date) - 604800000
-    const startDate = Date.parse(date)
+  getWeekly(date) {
+    const startDate = Date.parse(date) - 604800000
+    const stopDate = Date.parse(date)
     let weeklyHydration = {}
     this.data.forEach(day => {
       let currentDay = Date.parse(day['date'])
