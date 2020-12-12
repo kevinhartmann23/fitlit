@@ -8,6 +8,11 @@ class UserRepo {
     return this.userData.find(user => user.id === id)
   }
 
+  getUserName(id) {
+    return this.getUserData(id).name
+  }
+
+
   getStepGoalAverage() {
     let totalSteps = 0
     const average = this.userData.forEach(user => {

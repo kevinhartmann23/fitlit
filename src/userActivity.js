@@ -23,15 +23,15 @@ class UserActivity {
   }
 
   getWeeklyAverage(date) {
-    const endDate = Date.parse(date) - 604800000
-    const startDate = Date.parse(date)
+    const startDate = Date.parse(date) - 604800000
+    const stopDate = Date.parse(date)
     let weeklyActivity = 0
     let numDays = 0
     this.data.forEach(day => {
       let currentDay = Date.parse(day['date'])
       let currentWeekday = day.date.split('/')
       numDays++
-      if ((startDate < currentDay) && (currentDay <= endDate)) {
+      if ((startDate < currentDay) && (currentDay <= stopDate)) {
         weeklyActivity += day.minutesActive
       }
     })
@@ -48,20 +48,20 @@ class UserActivity {
     return record[0].flightsOfStairs
   }
 
-  // getWeeklyActivity(date) {
-  //   const startDate = Date.parse(date)
-  //   const endDate = startDate + 604800000
-  //   let weeklyActivity = {}
-  //   this.data.forEach(day => {
-  //     let currentDay = Date.parse(day['date'])
-  //     let currentWeekday = day.date.split('/')
-  //     if ((startDate <= currentDay) && (currentDay <= endDate)) {
-  //       weeklyActivity[day.date] = day.minutesActive
-  //     }
-  //   })
-  //   console.log(weeklyActivity)
-  //   return weeklyActivity
-  // }
+  getWeeklyTotal(date) {
+    const startDate = Date.parse(date) - 604800000
+    const stopDate = Date.parse(date)
+    let weeklyTotal = 0
+    this.data.forEach(day => {
+      let currentDay = Date.parse(day['date'])
+      let currentWeekday = day.date.split('/')
+      let newWeekday = new Date(currentWeekday[0], currentWeekday[1] - 1, currentWeekday[2])
+      if ((startDate < currentDay) && (currentDay <= stopDate)) {
+        weeklyTotal += day.numSteps
+      }
+    })
+    return weeklyTotal;
+  }
 
 }
 
