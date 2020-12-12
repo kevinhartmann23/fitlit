@@ -6,6 +6,9 @@ function createWeeklyChart(dataName, date) {
   let weeklyData = currentUser.dataSets[dataName].getWeekly(date)
   let newWeekly = new Chart(weeklyChart, {
     type: 'bar',
+    options: {
+      maintainAspectRatio: false,
+    },
     data: {
       labels: Object.keys(weeklyData),
       datasets : [{
