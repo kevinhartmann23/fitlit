@@ -1,5 +1,5 @@
 let allUserData = new UserRepo(userData)
-let currentUser = new User(allUserData.getUserData(1))
+let currentUser = new User(allUserData.getUserData(50))
 
 
 function getDataRepos (id) {
