@@ -49,7 +49,6 @@ class SleepRepo {
       .filter(e => e != undefined)
     return result;
   }
-
 }
 
 if (typeof module !== 'undefined') {

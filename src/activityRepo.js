@@ -3,6 +3,10 @@ class ActivityRepo {
     this.data = data;
   }
 
+  getActivityData(id){
+    return this.data.filter(info => info.userID === id)
+  }
+
   getDailyMiles(id, date, user) {
     let stride = user.strideLength
     return this.data.filter(info => info.userID === id)
@@ -21,9 +25,3 @@ class ActivityRepo {
 if (typeof module !== 'undefined') {
   module.exports = ActivityRepo
 }
-
-
-let highestArray = this.data.filter(day => day.date === date)
-  .sort((a, b) => return b.hoursSlept - a.hoursSlept)
-  .map(day => {
-})
