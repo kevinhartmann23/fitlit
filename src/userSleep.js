@@ -47,6 +47,21 @@ class UserSleep {
     })
     return weeklyQuality;
   }
+
+  getWeeklyTotal(date) {
+    const startDate = Date.parse(date) - 604800000
+    const stopDate = Date.parse(date)
+    let weeklyTotal = 0
+    this.data.forEach(day => {
+      let currentDay = Date.parse(day['date'])
+      let currentWeekday = day.date.split('/')
+      let newWeekday = new Date(currentWeekday[0], currentWeekday[1] - 1, currentWeekday[2])
+      if ((startDate < currentDay) && (currentDay <= stopDate)) {
+        weeklyTotal += day.hoursSlept
+      }
+    })
+    return weeklyTotal;
+  }
   // averageHours(prop) {
   //   let total = 0
   //   this.data.forEach(day => total += day.hoursSlept)

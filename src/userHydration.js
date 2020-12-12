@@ -30,6 +30,21 @@ class UserHydration {
     return weeklyHydration;
   }
 
+  getWeeklyTotal(date) {
+    const startDate = Date.parse(date) - 604800000
+    const stopDate = Date.parse(date)
+    let weeklyTotal = 0
+    this.data.forEach(day => {
+      let currentDay = Date.parse(day['date'])
+      let currentWeekday = day.date.split('/')
+      let newWeekday = new Date(currentWeekday[0], currentWeekday[1] - 1, currentWeekday[2])
+      if ((startDate < currentDay) && (currentDay <= stopDate)) {
+        weeklyTotal += day.numOunces
+      }
+    })
+    return weeklyTotal;
+  }
+
 }
 
 if (typeof module !== 'undefined') {
