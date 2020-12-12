@@ -31,7 +31,7 @@ function getFriendRepos (friends) {
 function getFriendWeeklyData (date, type) {
   friendTotals = []
   currentUser.friendData.forEach(friend => {
-    let name = friend.name
+    let name = friend.name.split(' ')[0]
     let total = friend[type].getWeeklyTotal(date)
     friendTotals.push({'name' : name, 'total' : total})
   })
