@@ -148,6 +148,8 @@ h2 {
 }
 
 /* hydration page */
+.sleep-page,
+.activity-page,
 .hydration-page,
 .display-page{
   display: grid;

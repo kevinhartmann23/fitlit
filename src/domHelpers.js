@@ -5,12 +5,7 @@ function generatePage(type) {
   return `
   <div class="${data.class}">
     <section class="friends-sidebar">
-      <h3 class="friends-title">friends</h3>
-      <div class="friend-section">
-        <img class="user-icon" src="../assets/imgs/user-icon.png" alt="user"/>
-        <p class="friend-name">friend 1</p>
-        <p class="friend-info">water consumed this week: 1000oz</p>
-      </div>
+      ${generateFriendList(type)}
     </section>
     <div class="chart-container">
       <canvas class="weekly" id="weekly"></canvas>
@@ -36,4 +31,31 @@ function generatePage(type) {
     </div>
     <img class="logo-man" src="${data.imgSource}" alt="logo hyrdation"/>
   </div>`
+}
+
+function generateFriendList(type) {
+  let friendHtml = [];
+  friendData = getFriendWeeklyData(date, type)
+  friendDataDisplay = getFriendDataInfo(type)
+  friendData.forEach(friend => {
+    friendHtml.push(
+      `<div class="friend-section">
+        <img class="user-icon" src="../assets/imgs/user-icon.png" alt="user"/>
+        <p class="friend-name">${friend.name}</p>
+        <p class="friend-info">${friendDataDisplay} ${friend.total}</p>
+      </div>`
+    )
+  })
+  return friendHtml.join('')
+}
+
+function getFriendDataInfo(type) {
+  switch(type) {
+    case 'hydration':
+      return 'Water consumed this week:'
+    case 'sleep':
+      return 'Hours slept this week:'
+    case 'activity':
+      return 'Total steps this week:'
+  }
 }
