@@ -6,7 +6,7 @@ class UserActivity {
 
   getTotalAverage() {
     let total = 0
-    this.data.forEach(day => total += day.numOunces)
+    this.data.forEach(day => total += day.numSteps)
     return Math.round(total/this.data.length)
   }
 
@@ -36,6 +36,19 @@ class UserActivity {
       }
     })
     return weeklyActivity/numDays
+  }
+
+  getWeekly(date) {
+    const startDate = Date.parse(date) - 604800000
+    const stopDate = Date.parse(date)
+    let weeklyHydration = {}
+    this.data.forEach(day => {
+      let currentDay = Date.parse(day['date'])
+      if ((startDate < currentDay) && (currentDay <= stopDate)) {
+        weeklyHydration[day.date] = day.numSteps
+      }
+    })
+    return weeklyHydration;
   }
 
   getGoalAchievement(date, user) {

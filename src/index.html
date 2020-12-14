@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href = "styles.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <title>fitZen</title>
     <link rel="icon" href="../assets/imgs/logo-man.ico">
@@ -11,10 +11,12 @@
   <body>
     <nav class="navigation-bar">
       <div id="logo"><img id="logo" src="../assets/imgs/logo-man.ico" alt="fitZen Man"/></div>
+      <p class="nav-message">Welcome to fitZen!</p>
+      <input type="date" id="date" onChange="updateDate()" value="2019-09-22" min="2019-06-15" max="2019-09-22">
       <div class="nav-icons">
-        <img class="icons water" id="water-empty" src="../assets/imgs/water-glass-grey.png" alt="view hydration info"/>
-        <img class="icons sneaker" id="sneaker-empty" src="../assets/imgs/sneakers-grey.png" alt="view activity info"/>
-        <img class="icons bed" id="bed-empty" src="../assets/imgs/empty-bed-grey.png" alt="view sleep info"/>
+        <img class="icons water" id="hydration" src="../assets/imgs/water-glass-grey.png" alt="view hydration info"/>
+        <img class="icons sneaker" id="activity" src="../assets/imgs/sneakers-grey.png" alt="view activity info"/>
+        <img class="icons bed" id="sleep" src="../assets/imgs/empty-bed-grey.png" alt="view sleep info"/>
         <div class="dropdown-menu">
           <img id="menu-hamburger" src="../assets/imgs/menu-icon.png" alt="menu"/>
           <div class="dropdown-content">
@@ -24,71 +26,19 @@
         </div>
       </div>
     </nav>
-    <div class="welcome-page hidden">
+    <div class="welcome-page">
       <img class="welcome-image" src="../assets/imgs/login-man.png" alt="fitZen Man"/>
       <h2>fitZen</h2>
       <input class="username-input" type="text" id="user-name-entry" placeholder="username">
       <br>
-      <button class="submit-button">login</button>
+      <button class="submit-button" id="main">login</button>
     </div>
     <div class="main-page hidden">
     </div>
-    <div class="hydration-page">
-      <section class="friends-sidebar">
-        <h3 class="friends-title">friends</h3>
-        <div class="friend-section">
-          <img class="user-icon" src="../assets/imgs/user-icon.png" alt="user"/>
-          <p class="friend-name">friend 1</p>
-          <p class="friend-info">water consumed this week: 1000oz</p>
-        </div>
-        <div class="friend-section">
-          <img class="user-icon" src="../assets/imgs/user-icon.png" alt="user"/>
-          <p class="friend-name">friend 1</p>
-          <p class="friend-info">water consumed this week: 1000oz</p>
-        </div>
-        <div class="friend-section">
-          <img class="user-icon" src="../assets/imgs/user-icon.png" alt="user"/>
-          <p class="friend-name">friend 1</p>
-          <p class="friend-info">water consumed this week: 1000oz</p>
-        </div>
-        <div class="friend-section">
-          <img class="user-icon" src="../assets/imgs/user-icon.png" alt="user"/>
-          <p class="friend-name">friend 1</p>
-          <p class="friend-info">water consumed this week: 1000oz</p>
-        </div>
-        <div class="friend-section">
-          <img class="user-icon" src="../assets/imgs/user-icon.png" alt="user"/>
-          <p class="friend-name">friend 1</p>
-          <p class="friend-info">water consumed this week: 1000oz</p>
-        </div>
-      </section>
-      <div class="chart-container">
-        <canvas class="weekly-hydration" id="weekly"></canvas>
-      </div>
-      <div class="circle-wrapper other">
-        <div class="circle-display" id="hydration-today">
-          <h1 class="info-text">21oz</h1>
-          <p>other info</p>
-          <h4>other time</h4>
-        </div>
-      </div>
-      <div class="circle-wrapper weekly">
-        <div class="circle-display" id="hydration-today">
-          <h1 class="info-text">21oz</h1>
-          <p>water consumed</p>
-          <h4>LAST 7 DAYS</h4>
-        </div>
-      </div>
-      <div class="circle-wrapper daily">
-        <div class="circle-display" id="hydration-today">
-          <h1 class="info-text">21oz</h1>
-          <p>water consumed</p>
-          <h4>TODAY</h4>
-        </div>
-      </div>
-      <img class="hydration-man" src="../assets/imgs/man-hydra.png" alt="logo hyrdation"/>
+    <div class="display-page">
 
     </div>
+
 
 
     <script type="text/javascript" src="../data/users.js"></script>
@@ -111,5 +61,6 @@
     <script type="text/javascript" src="./scripts.js"></script>
     <script type="text/javascript" src="./dataHelpers.js"></script>
     <script type="text/javascript" src="./chartHelpers.js"></script>
+    <script type="text/javascript" src="./domHelpers.js"></script>
   </body>
 </html>

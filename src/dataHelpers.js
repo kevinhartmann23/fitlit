@@ -1,7 +1,3 @@
-let allUserData = new UserRepo(userData)
-let currentUser = new User(allUserData.getUserData(50))
-
-
 function getDataRepos (id) {
   let hydroRepo = new HydrationRepo(hydrationData)
   let activityRepo = new ActivityRepo(activityData)
@@ -39,7 +35,48 @@ function getFriendWeeklyData (date, type) {
   return friendTotals
 }
 
-
+function getPageData() {
+  htmlData = [
+    {'type' : 'hydration',
+     'class' : 'hydration-page',
+     'infoDataOne' : `${currentUser.dataSets.hydration.getTotalAverage()}`,
+     'labelOne' : 'Water Consumed',
+     'timeOne' : 'ALL TIME AVERAGE',
+     'infoDataTwo' : `${currentUser.dataSets.hydration.getWeeklyTotal(date)}`,
+     'labelTwo' : 'Water Consumed',
+     'timeTwo' : 'LAST 7 DAYS',
+     'infoDataThree' : `${currentUser.dataSets.hydration.getDailyHydration(date)}`,
+     'labelThree' : 'Water Consumer',
+     'timeThree' : 'Today',
+     'imgSource' : '../assets/imgs/man-hydra.png'
+   },
+   {'type' : 'sleep',
+    'class' : 'sleep-page',
+    'infoDataOne' : `${currentUser.dataSets.sleep.getWeeklyTotal(date)} | ${currentUser.dataSets.sleep.getWeeklyTotalQuality(date)}`,
+    'labelOne' : 'Hours | Quality',
+    'timeOne' : 'ALL TIME AVERAGE',
+    'infoDataTwo' : `${currentUser.dataSets.sleep.getWeeklyTotal(date)}`,
+    'labelTwo' : 'Hours slept',
+    'timeTwo' : 'LAST 7 DAYS',
+    'infoDataThree' : `${currentUser.dataSets.sleep.getTotalByDay(date, 'hoursSlept')}`,
+    'labelThree' : 'Hours slept',
+    'timeThree' : 'Today',
+    'imgSource' : '../assets/imgs/man-sleep.png'
+  },
+  {'type' : 'activity',
+   'class' : 'activity-page',
+   'infoDataOne' : `${currentUser.dataSets.activity.getTotalAverage()}`,
+   'labelOne' : 'Number of steps',
+   'timeOne' : 'ALL TIME AVERAGE',
+   'infoDataTwo' : `${currentUser.dataSets.activity.getWeeklyTotal(date)}`,
+   'labelTwo' : 'Number of steps',
+   'timeTwo' : 'LAST 7 DAYS',
+   'infoDataThree' : `${currentUser.dataSets.activity.getDailyMiles(date, currentUser)}`,
+   'labelThree' : 'Number of miles',
+   'timeThree' : 'Today',
+   'imgSource' : '../assets/imgs/man-act.png'
+  }]
+}
 
 
 
