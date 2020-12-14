@@ -25,6 +25,7 @@ function createWeeklyChart(dataName, date) {
     }
   })
   Chart.defaults.global.defaultFontColor = 'black';
+  Chart.defaults.global.animation
 }
 
 function createAverageSleepChart() {

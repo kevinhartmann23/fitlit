@@ -1,7 +1,4 @@
-let currentUser;
-let date = '2019/09/22'
-let htmlData;
-const allUserData = new UserRepo(userData)
+
 
 
 const loginBtn = document.querySelector('.submit-button')
@@ -11,11 +8,18 @@ const sleepBtn = document.querySelector('.bed')
 const userInput = document.querySelector('.username-input')
 const loginPage = document.querySelector('.welcome-page')
 const pageDisplay = document.querySelector('.display-page')
+const calendar = document.querySelector('#date')
 
 loginBtn.addEventListener('click', userLogin)
 hydrationBtn.addEventListener('click', populatePage)
 activityBtn.addEventListener('click', populatePage)
 sleepBtn.addEventListener('click', populatePage)
+
+
+let date = calendar.value.split('-').join('/')
+let currentUser;
+let htmlData;
+const allUserData = new UserRepo(userData)
 
 function userLogin () {
   user = allUserData.getUserId(userInput.value)
@@ -33,6 +37,11 @@ function populatePage(event) {
   createWeeklyChart(type, date)
 }
 
-function test() {
-  console.log('test')
+function updateDate(event) {
+  currentPage = pageDisplay.firstElementChild.id
+  console.log('CURRENT PAGE', currentPage)
+  date = calendar.value.split('-').join('/')
+  let page = generatePage(currentPage)
+  pageDisplay.innerHTML = page
+  createWeeklyChart(currentPage, date)
 }

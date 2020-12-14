@@ -47,6 +47,22 @@ body {
   margin-left: 1em
 }
 
+.nav-message {
+  position: fixed;
+  color: black;
+  left: 50%;
+  top: 1.5em;
+}
+
+#date {
+  display: flex;
+  position: fixed;
+  height: 1em;
+  width: 8em;
+  left: 60%;
+  top: 2em
+}
+
 .dropdown-menu,
 .icons {
   height: 4em;
@@ -249,7 +265,6 @@ h2 {
   border-radius: 15em;
   background-color: #899991;
   margin-top: 5.25em;
-  /* position: fixed; */
 }
 
 .info-text {

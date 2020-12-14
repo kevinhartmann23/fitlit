@@ -3,7 +3,7 @@ function generatePage(type) {
   let dataObject = htmlData.filter(page => page.type === type)
   let data = dataObject[0]
   return `
-  <div class="${data.class}">
+  <div class="${data.class}" id="${data.type}">
     <section class="friends-sidebar">
       ${generateFriendList(type)}
     </section>
