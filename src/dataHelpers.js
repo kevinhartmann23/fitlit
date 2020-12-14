@@ -1,7 +1,3 @@
-let allUserData = new UserRepo(userData)
-let currentUser = new User(allUserData.getUserData(50))
-
-
 function getDataRepos (id) {
   let hydroRepo = new HydrationRepo(hydrationData)
   let activityRepo = new ActivityRepo(activityData)
@@ -39,7 +35,46 @@ function getFriendWeeklyData (date, type) {
   return friendTotals
 }
 
-
+function getPageData() {
+  htmlData = [
+    {'type' : 'hydration',
+     'class' : 'hydration-page',
+     'infoDataOne' : `${user.dataSets.hydration.getTotalAverage()}`,
+     'labelOne' : 'Water Consumed',
+     'timeOne' : 'ALL TIME AVERAGE',
+     'infoDataTwo' : `${user.dataSets.hydration.getWeeklyTotal(date)}`,
+     'labelTwo' : 'Water Consumed',
+     'timeTwo' : 'LAST 7 DAYS',
+     'infoDataThree' : `${user.dataSets.hydration.getDailyHydration(date)}`,
+     'labelThree' : 'Water Consumer',
+     'timeThree' : 'Today',
+     'imgSource' : '../assets/imgs/man-hydra.png'
+   },
+   {'type' : 'sleep',
+    // 'infoDataOne' : `${}`,
+    'labelOne' : 'Hours | Quality',
+    'timeOne' : 'ALL TIME AVERAGE',
+    // 'infoDataTwo' : `${}`,
+    'labelTwo' : 'Water Consumed',
+    'timeTwo' : 'LAST 7 DAYS',
+    // 'infoDataThree' : `${}`,
+    'labelThree' : 'Water Consumer',
+    'timeThree' : 'Today',
+    'imgSource' : '../assets/imgs/man-hydra.png'
+  },
+  {'type' : 'activity',
+   // 'infoDataOne' : `${}`,
+   'labelOne' : 'Hours | Quality',
+   'timeOne' : 'ALL TIME AVERAGE',
+   // 'infoDataTwo' : `${}`,
+   'labelTwo' : 'Water Consumed',
+   'timeTwo' : 'LAST 7 DAYS',
+   // 'infoDataThree' : `${}`,
+   'labelThree' : 'Water Consumer',
+   'timeThree' : 'Today',
+   'imgSource' : '../assets/imgs/man-hydra.png'
+  }]
+}
 
 
 

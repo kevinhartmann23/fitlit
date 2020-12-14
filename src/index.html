@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href = "styles.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <title>fitZen</title>
     <link rel="icon" href="../assets/imgs/logo-man.ico">
@@ -24,7 +24,7 @@
         </div>
       </div>
     </nav>
-    <div class="welcome-page hidden">
+    <div class="welcome-page">
       <img class="welcome-image" src="../assets/imgs/login-man.png" alt="fitZen Man"/>
       <h2>fitZen</h2>
       <input class="username-input" type="text" id="user-name-entry" placeholder="username">
@@ -33,7 +33,8 @@
     </div>
     <div class="main-page hidden">
     </div>
-    <div class="hydration-page">
+    <div class="display-page"></div>
+    <!-- <div class="hydration-page">
       <section class="friends-sidebar">
         <h3 class="friends-title">friends</h3>
         <div class="friend-section">
@@ -74,21 +75,25 @@
       </div>
       <div class="circle-wrapper weekly">
         <div class="circle-display" id="hydration-today">
+          <h1 class="info-text">8.2 | 3.5</h1>
+          <p>Hours | Quality</p>
+          <h4>ALL TIME AVERAGE</h4>
+        </div>
+        <div class="circle-display" id="hydration-today">
           <h1 class="info-text">21oz</h1>
-          <p>water consumed</p>
+          <p>Water Consumed</p>
           <h4>LAST 7 DAYS</h4>
         </div>
       </div>
       <div class="circle-wrapper daily">
         <div class="circle-display" id="hydration-today">
           <h1 class="info-text">21oz</h1>
-          <p>water consumed</p>
+          <p>Water Consumed</p>
           <h4>TODAY</h4>
         </div>
       </div>
       <img class="hydration-man" src="../assets/imgs/man-hydra.png" alt="logo hyrdation"/>
-
-    </div>
+    </div> -->
 
 
     <script type="text/javascript" src="../data/users.js"></script>
@@ -111,5 +116,6 @@
     <script type="text/javascript" src="./scripts.js"></script>
     <script type="text/javascript" src="./dataHelpers.js"></script>
     <script type="text/javascript" src="./chartHelpers.js"></script>
+    <script type="text/javascript" src="./domHelpers.js"></script>
   </body>
 </html>
