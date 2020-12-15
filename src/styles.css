@@ -169,24 +169,30 @@ h2 {
 .hydration-page,
 .display-page{
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  height: 100vh;
+  /* padding: 2em 2em; */
+  /* grid-template-columns: 1fr 2fr 1fr; */
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
   grid-template-rows: 2fr 2fr;
+  /* grid-template-rows: repeat(auto-fit, minmax(240px, 2fr)); */
   grid-template-areas:
-  "friendsbox weeklybox dailybox"
-  "friendsbox chartbox infobox"
-  "friendsbox chartbox logobox";
-  width: 100vw;
+  "friendsbox weeklybox weeklybox dailybox"
+  /* "friendsbox chartbox infobox" */
+  "friendsbox chartbox chartbox logobox";
+  /* width: 100vw; */
 }
 
 .friends-sidebar {
   background-color: #899991;
   grid-area: friendsbox;
-  min-width: 300px;
+  min-width: 15%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-content: center;
   text-align: center;
-  height: 85vh;
+  /* height: 85vh; */
+  height: 100%;
   margin-top: 5.25em;
   margin-left: 1em;
   overflow: auto;
@@ -201,8 +207,10 @@ h2 {
 
 .logo-man {
   grid-template: infobox;
-  height: 16em;
-  width: 20em;
+  /* height: 16em; */
+  width: 100%;
+  min-width: 25%;
+  /* width: 20em; */
   margin: 1.5em;
   margin-left: 2.5em;
   align-self: center;
@@ -230,13 +238,14 @@ h2 {
 
 .chart-container {
   padding: .5em;
-  width: 100%;
+  /* width: 100%; */
   grid-area: chartbox;
+  align-self: center;
 }
 
 .circle-wrapper {
-  height: 100%;
-  width: 100%;
+  height: 75%;
+  width: 75%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -246,28 +255,66 @@ h2 {
 
 .daily {
   grid-area: dailybox;
+
+  width: 100%
 }
 
 .weekly {
   grid-area: weeklybox;
   display: flex;
   justify-content: space-around;
+
+  width: 100%
 }
 
-.other {
+/* .other {
   grid-area: weeklybox;
   display: none
-}
+} */
 
 .circle-display {
-  height: 19em;
-  width: 19em;
+  /* height: 19em; */
+  /* width: 19em; */
+  height: 80%;
   border-radius: 15em;
   background-color: #899991;
   margin-top: 5.25em;
+  min-width: 19em;
 }
 
-.info-text {
-  font-size: 5.5em;
-  margin-top: 1em;
+.user-info {
+  font-size: 1.3em;
+  line-height: 2.5;
+  text-align: left;
+  height: 100%
+}
+
+.info-card {
+  position: fixed;
+  padding: 1em;
+  left: 35%;
+  top: 25%;
+  width: 30%;
+  /* height: 45%; */
+  z-index: 5;
+  background-color: #899991;
+  text-align: center;
+  border-radius: 1em;
+  box-shadow: 0 0 5px 2px black
+}
+
+.info-header {
+  text-decoration: underline;
+  font-size: 2em
+}
+
+.exit-menu {
+  position: fixed;
+  left: 65.5%;
+  top: 25.5%
+}
+
+.exit-menu:hover {
+  cursor: pointer;
+  transform: {scale(1.1)}
 }

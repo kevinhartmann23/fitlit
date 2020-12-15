@@ -52,7 +52,7 @@ function getPageData() {
    },
    {'type' : 'sleep',
     'class' : 'sleep-page',
-    'infoDataOne' : `${currentUser.dataSets.sleep.getWeeklyTotal(date)} | ${currentUser.dataSets.sleep.getWeeklyTotalQuality(date)}`,
+    'infoDataOne' : `${currentUser.dataSets.sleep.getAverage('hoursSlept')} | ${currentUser.dataSets.sleep.getAverage('sleepQuality')}`,
     'labelOne' : 'Hours | Quality',
     'timeOne' : 'ALL TIME AVERAGE',
     'infoDataTwo' : `${currentUser.dataSets.sleep.getWeeklyTotal(date)}`,
