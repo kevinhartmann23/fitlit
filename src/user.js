@@ -15,7 +15,6 @@ class User {
     let firstName = this.name.split(' ')
     return firstName[0];
   }
-
 }
 
 if (typeof module !== 'undefined') {

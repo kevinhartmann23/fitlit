@@ -12,6 +12,7 @@ const infoCardDisplay = document.querySelector('.user-info')
 const exitMenuBtn = document.querySelector('.exit-menu')
 const logoutBtn = document.querySelector('#logout')
 const navigationBar = document.querySelector('.navigation-bar')
+const mainPage = document.querySelector('.main-page')
 
 
 
