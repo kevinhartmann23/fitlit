@@ -11,6 +11,8 @@ const infoCardBtn = document.querySelector('#user-info')
 const infoCardDisplay = document.querySelector('.user-info')
 const exitMenuBtn = document.querySelector('.exit-menu')
 const logoutBtn = document.querySelector('#logout')
+const navigationBar = document.querySelector('.navigation-bar')
+
 
 
 
@@ -18,9 +20,7 @@ loginBtn.addEventListener('click', userLogin)
 hydrationBtn.addEventListener('click', populatePage)
 activityBtn.addEventListener('click', populatePage)
 sleepBtn.addEventListener('click', populatePage)
-infoCardBtn.addEventListener('click', populateInfoCard)
-exitMenuBtn.addEventListener('click', hideInfoCard)
-logoutBtn.addEventListener('click', logOut)
+
 
 
 let date = calendar.value.split('-').join('/')
@@ -29,12 +29,14 @@ let htmlData;
 const allUserData = new UserRepo(userData)
 
 function userLogin () {
+  infoCardBtn.addEventListener('click', populateInfoCard)
+  exitMenuBtn.addEventListener('click', hideInfoCard)
+  logoutBtn.addEventListener('click', logOut)
   user = allUserData.getUserId(userInput.value)
   currentUser = new User(user)
   userInput.value = ''
   loginPage.classList.toggle('hidden')
   populatePage('hydration')
-
 }
 
 function populatePage(event) {
@@ -57,6 +59,7 @@ function updateDate(event) {
 
 function populateInfoCard() {
   infoCard.classList.toggle('hidden')
+  blurBackground()
   infoCardDisplay.innerText = `
     fitZen ID Number: ${currentUser.id}
     Full Name: ${currentUser.name}
@@ -69,10 +72,19 @@ function populateInfoCard() {
 
 function hideInfoCard() {
   infoCard.classList.toggle('hidden')
+  blurBackground()
 }
 
 function logOut() {
   currentUser = ''
   pageDisplay.innerHTML = ''
   loginPage.classList.toggle('hidden')
+  infoCardBtn.removeEventListener('click', populateInfoCard)
+  exitMenuBtn.removeEventListener('click', hideInfoCard)
+  logoutBtn.removeEventListener('click', logOut)
+}
+
+function blurBackground() {
+  navigationBar.classList.toggle('blur')
+  pageDisplay.classList.toggle('blur')
 }
