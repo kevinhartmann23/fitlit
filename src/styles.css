@@ -10,7 +10,8 @@ html {
   width: 100vw;
   margin: 0em;
   background-color: #708aa9;
-  color: rgba(255, 255, 255, .75);
+  opacity: 75%;
+  color: rgba(255, 255, 255, .95);
 }
 
 body {
@@ -321,6 +322,18 @@ h2 {
   border-radius: 15em;
   background-color: #899991;
   margin-top: 5.25em;
+}
+
+.hydration {
+  background-color: #7190B9;
+}
+
+.activity {
+  background-color: #C27382;
+}
+
+.sleep {
+  background-color: #967BB6;
 }
 
 .info-text {
