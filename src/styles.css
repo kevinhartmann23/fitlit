@@ -2,6 +2,7 @@
   Margin:0;
   Padding:0;
   Border:0;
+  font-family: 'Inter', sans-serif;
 }
 
 html {
@@ -9,12 +10,13 @@ html {
   width: 100vw;
   margin: 0em;
   background-color: rgba(112, 138, 169, .75)
+  color: rgba(255, 255, 255, .95);
 }
 
 body {
+  height: 100vh;
+  width: 100vw;
   margin: 0em;
-  background-color: #708aa9;
-  color: rgba(255, 255, 255, .75);
 }
 
 .hidden {
@@ -47,20 +49,15 @@ body {
   margin-left: 1em
 }
 
-.nav-message {
-  position: fixed;
-  color: black;
-  left: 50%;
-  top: 1.5em;
-}
-
 #date {
   display: flex;
-  position: fixed;
-  height: 1em;
-  width: 8em;
-  left: 60%;
-  top: 2em
+  justify-content: flex-start;
+  height: 2.5em;
+  width: 9.7em;
+  margin: 1em;
+  border: solid #708aa9;
+  border-radius: 2em;
+  align-self: center;
 }
 
 .dropdown-menu,
@@ -110,11 +107,16 @@ body {
   display: none;
   background-color: lightgrey;
   cursor: pointer;
-  height: 100%;
+  height: auto;
+  width: auto;;
+  color: #708aa9;
+  border-bottom-right-radius: .25em;
+  border-bottom-left-radius: .25em;
 }
 
 .dropdown-item {
   font-size: 1.25em;
+  padding: .35em;
   border: none;
 }
 
@@ -130,6 +132,8 @@ body {
 }
 
 .welcome-image {
+  height: 35%;
+  width: 45%;
   margin-top: 4em;
 }
 
@@ -139,10 +143,11 @@ h2 {
 }
 
 .username-input {
-  height: 2em;
-  width: 20em;
+  height: 7.25vh;
+  width: 30vw;
   border-radius: .25em;
   background-color: #708aa9;
+  color: inherit;
   font-size: 1.5em;
   opacity: 95%;
 }
@@ -155,15 +160,66 @@ h2 {
 
 .submit-button {
   outline: none;
-  height: 3em;
-  width: 15em;
+  height: 7.25vh;
+  width: 15vw;
   border-radius: 1em;
   background-color: #899991;
+  color: inherit;
   margin-top: 1em;
   font-size: 1.25em;
 }
 
-/* hydration page */
+/* main-page */
+.main-page {
+  height: 100vh;
+  width: 100vw;
+}
+
+.main-message {
+  margin-top: 1.25em;
+  font-size: 3em;
+  text-align: center;
+  width: 100vw;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.main-image {
+  height: 38em;
+  width: 49em;
+  align-self: center;
+}
+
+#hydration2 {
+  position: absolute;
+  top: 43%;
+  left: 28%;
+  transform: scale(1.5)
+}
+
+#activity2 {
+  position: absolute;
+  top: 22%;
+  left: 47%;
+  transform: scale(1.5)
+}
+
+#sleep2 {
+  position: absolute;
+  top: 40%;
+  right: 28%;
+  transform: scale(1.5)
+}
+
+/* info page */
 .sleep-page,
 .activity-page,
 .hydration-page,
@@ -215,6 +271,7 @@ h2 {
   margin-left: 2.5em;
   align-self: center;
 }
+
 .friend-section {
   align-content: flex-start;
 }
@@ -250,7 +307,6 @@ h2 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
 }
 
 .daily {
@@ -282,6 +338,36 @@ h2 {
   min-width: 19em;
 }
 
+/* Specific Info Styling*/
+
+.hydration {
+  background-color: #7190B9;
+}
+
+.activity {
+  background-color: #C27382;
+}
+
+.sleep {
+  background-color: #967BB6;
+}
+
+.info-text {
+  font-size: 4em;
+  margin-top: 1.25em;
+  font-weight: bolder;
+}
+
+p {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+/*user info card*/
 .user-info {
   font-size: 1.3em;
   line-height: 2.5;
