@@ -7,6 +7,7 @@ function createWeeklyChart(dataName, date) {
   let newWeekly = new Chart(weeklyChart, {
     type: 'bar',
     options: {
+      responsive: true,
       maintainAspectRatio: false,
     },
     data: {
