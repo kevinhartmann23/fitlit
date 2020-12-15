@@ -5,6 +5,7 @@ function generatePage(type) {
   return `
   <div class="${data.class}" id="${data.type}">
     <section class="friends-sidebar">
+      <h2 class="friends-title">friends</h2>
       ${generateFriendList(type)}
     </section>
     <div class="chart-container">
@@ -39,11 +40,11 @@ function generateFriendList(type) {
   friendDataDisplay = getFriendDataInfo(type)
   friendData.forEach(friend => {
     friendHtml.push(
-      `<div class="friend-section">
+      `<section class="friend-section">
         <img class="user-icon" src="../assets/imgs/user-icon.png" alt="user"/>
         <p class="friend-name">${friend.name}</p>
         <p class="friend-info">${friendDataDisplay} ${friend.total}</p>
-      </div>`
+      </section>`
     )
   })
   return friendHtml.join('')

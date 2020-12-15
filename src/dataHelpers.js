@@ -47,7 +47,7 @@ function getPageData() {
      'timeTwo' : 'LAST 7 DAYS',
      'infoDataThree' : `${currentUser.dataSets.hydration.getDailyHydration(date)}`,
      'labelThree' : 'Water Consumer',
-     'timeThree' : 'Today',
+     'timeThree' : 'TODAY',
      'imgSource' : '../assets/imgs/man-hydra.png'
    },
    {'type' : 'sleep',

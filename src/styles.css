@@ -2,6 +2,7 @@
   Margin:0;
   Padding:0;
   Border:0;
+  font-family: 'Inter', sans-serif;
 }
 
 html {
@@ -297,7 +298,6 @@ h2 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
 }
 
 .daily {
@@ -324,10 +324,19 @@ h2 {
 }
 
 .info-text {
-  font-size: 5.5em;
-  margin-top: 1em;
+  font-size: 4em;
+  margin-top: 1.25em;
+  font-weight: bolder;
 }
 
+p {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1em;
+}
 @media only screen and (min-width: 600px) {
 /* for tablets */
 }
