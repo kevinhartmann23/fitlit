@@ -30,7 +30,8 @@ body {
   display: inline-block;
   width: 100%;
   height: 4.25em;
-  left: 0
+  left: 0;
+  z-index: 3
 }
 
 .nav-icons {
@@ -69,19 +70,19 @@ body {
   text-align: center;
 }
 
-.sneaker {
+.activity {
   height: 3.5em;
 }
 
-.water:hover {
+.hydration:hover {
   content: url("../assets/imgs/water-glass-blue.png");
 }
 
-.sneaker:hover {
+.activity:hover {
   content: url("../assets/imgs/sneakers-red.png")
 }
 
-.bed:hover {
+.sleep:hover {
   content: url("../assets/imgs/empty-bed-purple.png")
 }
 
@@ -226,16 +227,11 @@ h2 {
 .display-page{
   display: grid;
   height: 100vh;
-  /* padding: 2em 2em; */
-  /* grid-template-columns: 1fr 2fr 1fr; */
   grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
   grid-template-rows: 2fr 2fr;
-  /* grid-template-rows: repeat(auto-fit, minmax(240px, 2fr)); */
   grid-template-areas:
   "friendsbox weeklybox weeklybox dailybox"
-  /* "friendsbox chartbox infobox" */
   "friendsbox chartbox chartbox logobox";
-  /* width: 100vw; */
 }
 
 .friends-sidebar {
@@ -258,17 +254,16 @@ h2 {
   margin-top: .125em;
   font-size: 3em;
   margin-bottom: .125em;
+  text-decoration: underline;
 }
 
 .logo-man {
   grid-template: infobox;
-  /* height: 16em; */
   width: 100%;
   min-width: 25%;
-  /* width: 20em; */
   margin: 1.5em;
   margin-left: 2.5em;
-  align-self: center;
+  align-self: flex-start;
 }
 
 .friend-section {
@@ -296,11 +291,11 @@ h2 {
   padding: .5em;
   /* width: 100%; */
   grid-area: chartbox;
-  align-self: center;
+  align-self: flex-start;
 }
 
 .circle-wrapper {
-  height: 75%;
+  height: 100%;
   width: 75%;
   display: flex;
   justify-content: center;
@@ -328,32 +323,33 @@ h2 {
 } */
 
 .circle-display {
-  /* height: 19em; */
-  /* width: 19em; */
-  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70%;
   border-radius: 15em;
   background-color: #899991;
-  margin-top: 5.25em;
+  margin-top: 6.3em;
   min-width: 19em;
+
 }
 
 /* Specific Info Styling*/
 
-.hydration {
+.hydration-widget {
   background-color: #7190B9;
 }
 
-.activity {
+.activity-widget {
   background-color: #C27382;
 }
 
-.sleep {
+.sleep-widget {
   background-color: #967BB6;
 }
 
 .info-text {
   font-size: 4em;
-  margin-top: 1.25em;
   font-weight: bolder;
 }
 
@@ -406,4 +402,77 @@ h4 {
 
 .blur {
   filter:blur(5px);
+}
+
+@media screen and (max-width: 768px) {
+  .sleep-page,
+  .activity-page,
+  .hydration-page,
+  .display-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .friends-sidebar {
+    margin-top: 6.25em;
+    margin-bottom: 2em;
+    overflow: visible;
+    flex-direction: row;
+    height: 9em;
+    justify-content: center;
+    width: 45em;
+  }
+
+  .friends-title {
+    display: none
+  }
+
+  .friend-info {
+    justify-content: center;
+    font-size: .75em;
+    width: 75%;
+    margin: auto;
+  }
+
+  .user-icon {
+    margin-top: .35em
+  }
+
+  .friend-name {
+    transform: scale(.75)
+  }
+
+  .chart-container {
+    align-self: center;
+    transform: scaleY(1.5, 1.5);
+    height: 376px;
+    width: 752px
+  }
+
+  .logo-man {
+    transform: scale(.75);
+    align-self: center;
+  }
+}
+
+
+@media screen and (max-width: 414px) {
+  .sleep-page,
+  .activity-page,
+  .hydration-page,
+  .display-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .friends-sidebar {
+    margin-top: 5.25em;
+  }
+
+  .chart-container {
+    height: 376px;
+    width: 752px
+  }
 }

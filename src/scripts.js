@@ -1,7 +1,10 @@
 const loginBtn = document.querySelector('.submit-button')
-const hydrationBtn = document.querySelector('.water')
-const activityBtn = document.querySelector('.sneaker')
-const sleepBtn = document.querySelector('.bed')
+const hydrationBtn = document.querySelector('#hydration')
+const activityBtn = document.querySelector('#activity')
+const sleepBtn = document.querySelector('#sleep')
+const hydrationMainBtn = document.querySelector('#hydration2')
+const activityMainBtn = document.querySelector('#activity2')
+const sleepMainBtn = document.querySelector('#sleep2')
 const userInput = document.querySelector('.username-input')
 const loginPage = document.querySelector('.welcome-page')
 const pageDisplay = document.querySelector('.display-page')
@@ -12,16 +15,20 @@ const infoCardDisplay = document.querySelector('.user-info')
 const exitMenuBtn = document.querySelector('.exit-menu')
 const logoutBtn = document.querySelector('#logout')
 const navigationBar = document.querySelector('.navigation-bar')
+const navigationIcons = document.querySelector('.nav-icons')
 const mainPage = document.querySelector('.main-page')
-
-
-
+const mainPageMessage = document.querySelector('.main-message')
 
 loginBtn.addEventListener('click', userLogin)
 hydrationBtn.addEventListener('click', populatePage)
 activityBtn.addEventListener('click', populatePage)
 sleepBtn.addEventListener('click', populatePage)
-
+hydrationMainBtn.addEventListener('click', populatePage)
+activityMainBtn.addEventListener('click', populatePage)
+sleepMainBtn.addEventListener('click', populatePage)
+infoCardBtn.addEventListener('click', populateInfoCard)
+exitMenuBtn.addEventListener('click', hideInfoCard)
+logoutBtn.addEventListener('click', logOut)
 
 
 let date = calendar.value.split('-').join('/')
@@ -30,21 +37,20 @@ let htmlData;
 const allUserData = new UserRepo(userData)
 
 function userLogin () {
-  infoCardBtn.addEventListener('click', populateInfoCard)
-  exitMenuBtn.addEventListener('click', hideInfoCard)
-  logoutBtn.addEventListener('click', logOut)
   user = allUserData.getUserId(userInput.value)
   currentUser = new User(user)
+  navigationIcons.classList.toggle('hidden')
   userInput.value = ''
   loginPage.classList.toggle('hidden')
-  populatePage('hydration')
+  mainPage.classList.toggle('hidden')
+  mainPageMessage.innerText = `Welcome to fitZen, ${currentUser.getUserFirstName()}!`
 }
 
 function populatePage(event) {
-  type = event.target.id
+  console.log('test')
+  type = event.target.classList[1]
   let page = generatePage(type)
-  console.log(page)
-  console.log(pageDisplay)
+  mainPage.classList.add('hidden')
   pageDisplay.innerHTML = page
   createWeeklyChart(type, date)
 }
@@ -80,9 +86,7 @@ function logOut() {
   currentUser = ''
   pageDisplay.innerHTML = ''
   loginPage.classList.toggle('hidden')
-  infoCardBtn.removeEventListener('click', populateInfoCard)
-  exitMenuBtn.removeEventListener('click', hideInfoCard)
-  logoutBtn.removeEventListener('click', logOut)
+  navigationIcons.classList.toggle('hidden')
 }
 
 function blurBackground() {
