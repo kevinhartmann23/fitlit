@@ -39,6 +39,7 @@ function getPageData() {
   htmlData = [
     {'type' : 'hydration',
      'class' : 'hydration-page',
+     'widget' : 'hydration-widget',
      'infoDataOne' : `${currentUser.dataSets.hydration.getTotalAverage()}`,
      'labelOne' : 'Water Consumed',
      'timeOne' : 'ALL TIME AVERAGE',
@@ -52,6 +53,7 @@ function getPageData() {
    },
    {'type' : 'sleep',
     'class' : 'sleep-page',
+    'widget' : 'sleep-widget',
     'infoDataOne' : `${currentUser.dataSets.sleep.getAverage('hoursSlept')} | ${currentUser.dataSets.sleep.getAverage('sleepQuality')}`,
     'labelOne' : 'Hours | Quality',
     'timeOne' : 'ALL TIME AVERAGE',
@@ -65,6 +67,7 @@ function getPageData() {
   },
   {'type' : 'activity',
    'class' : 'activity-page',
+   'widget' : 'activity-widget',
    'infoDataOne' : `${currentUser.dataSets.activity.getTotalAverage()}`,
    'labelOne' : 'Number of steps',
    'timeOne' : 'ALL TIME AVERAGE',
