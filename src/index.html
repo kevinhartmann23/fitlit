@@ -14,7 +14,7 @@
       <p class="nav-message">Welcome to fitZen!</p>
       <input type="date" id="date" onChange="updateDate()" value="2019-09-22" min="2019-06-15" max="2019-09-22">
       <div class="nav-icons">
-        <img class="icons water" id="hydration" src="../assets/imgs/water-glass-grey.png" alt="view hydration info"/>
+        <img class="icons water" id="hydration" name="hydration" src="../assets/imgs/water-glass-grey.png" alt="view hydration info"/>
         <img class="icons sneaker" id="activity" src="../assets/imgs/sneakers-grey.png" alt="view activity info"/>
         <img class="icons bed" id="sleep" src="../assets/imgs/empty-bed-grey.png" alt="view sleep info"/>
         <div class="dropdown-menu">
@@ -39,6 +39,13 @@
 
     </div>
 
+
+
+    <div class="info-card hidden">
+      <span class="info-header">Account Information</span>
+      <div class="exit-menu">X</div>
+      <h1 class="user-info"></h1>
+    </div>
 
 
     <script type="text/javascript" src="../data/users.js"></script>
