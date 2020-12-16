@@ -105,6 +105,7 @@ Future Iteration:
 
 ### Challenges
 - Time management: it's easy to focus all of our time on our project, and we did. Learning to delegate and separate time for other homework or practice could have helped us outside of our project scope.
+- Grid Scaling and Sizing Chart.js: introducing charts.js was a lot to take on but we studied up and got it to work.
 
 ### Wins/Reflections
 - Responsiveness! We took some time to dive into Responsiveness and we are glad we did.
