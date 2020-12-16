@@ -18,6 +18,7 @@ const navigationBar = document.querySelector('.navigation-bar')
 const navigationIcons = document.querySelector('.nav-icons')
 const mainPage = document.querySelector('.main-page')
 const mainPageMessage = document.querySelector('.main-message')
+const logoIcon = document.querySelector('#logo')
 
 loginBtn.addEventListener('click', userLogin)
 hydrationBtn.addEventListener('click', populatePage)
@@ -29,6 +30,7 @@ sleepMainBtn.addEventListener('click', populatePage)
 infoCardBtn.addEventListener('click', populateInfoCard)
 exitMenuBtn.addEventListener('click', hideInfoCard)
 logoutBtn.addEventListener('click', logOut)
+logoIcon.addEventListener('click', backToMain)
 
 
 let date = calendar.value.split('-').join('/')
@@ -36,14 +38,29 @@ let currentUser;
 let htmlData;
 const allUserData = new UserRepo(userData)
 
+function usernameNotFound(input) {
+  if(!allUserData.getAllUserNames().includes(input.toUpperCase())){
+    userInput.value = ''
+    return alert(`username: ${input} does not exist, please try again!`)
+  }
+}
+
 function userLogin () {
-  user = allUserData.getUserId(userInput.value)
+  user = allUserData.getUserId(userInput.value.toUpperCase())
+  usernameNotFound(userInput.value)
   currentUser = new User(user)
   navigationIcons.classList.toggle('hidden')
   userInput.value = ''
   loginPage.classList.toggle('hidden')
-  mainPage.classList.toggle('hidden')
+  mainPage.classList.remove('hidden')
+  logoIcon.classList.add('hidden')
   mainPageMessage.innerText = `Welcome to fitZen, ${currentUser.getUserFirstName()}!`
+}
+
+function backToMain () {
+  pageDisplay.classList.add('hidden')
+  mainPage.classList.remove('hidden')
+  logoIcon.classList.add('hidden')
 }
 
 function populatePage(event) {
@@ -53,6 +70,7 @@ function populatePage(event) {
   mainPage.classList.add('hidden')
   pageDisplay.classList.remove('hidden')
   pageDisplay.innerHTML = page
+  logoIcon.classList.remove('hidden')
   createWeeklyChart(type, date)
 }
 
@@ -89,6 +107,8 @@ function logOut() {
   loginPage.classList.toggle('hidden')
   navigationIcons.classList.toggle('hidden')
   pageDisplay.classList.add('hidden')
+  logoIcon.classList.add('hidden')
+  mainPage.classList.add('hidden')
 }
 
 function blurBackground() {
