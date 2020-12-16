@@ -197,8 +197,25 @@ h2 {
   position: relative;
   top: -27em;
   right: -38.5em;
-  transform: scale(1.5)
+  transform: scale(1.5);
+  animation: hydration  infinite alternate 4s;
 }
+
+@keyframes hydration {
+  25% {
+    transform:  translateX(2px) translateY(-2px) scale(1.5)
+  }
+  50% {
+    transform: translateX(-2px) translateY(2px) scale(1.5)
+  }
+  75% {
+    transform: translateX(-2px) translateY(2px) scale(1.5)
+  }
+  100% {
+    transform: translateX(2px) translateY(2px) scale(1.5)
+  }
+}
+
 
 #activity2 {
   position: relative;
@@ -226,7 +243,18 @@ h2 {
   position: relative;
   top: -35.5em;
   left: 5.5em;
-  transform: scale(1.5)
+  transform: scale(1.5);
+  animation: rock infinite alternate 3s;
+}
+
+@keyframes rock {
+  0% {
+    transform: rotate(25deg) translateX(-10px) translateY(0px) scale(1.5)
+  }
+
+  100% {
+    transform: rotate(-25deg) translateX(15px) translateY(0px) scale(1.5)
+  }
 }
 
 /* info page */
@@ -333,7 +361,7 @@ h2 {
   background-color: #899991;
   margin-top: 6.3em;
   min-width: 19em;
-
+  box-shadow: inset 0 0 2px 3px
 }
 
 /* Specific Info Styling*/
