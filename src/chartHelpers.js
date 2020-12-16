@@ -1,12 +1,13 @@
-let weeklyChart = document.getElementById('weekly').getContext('2d');
 let averageChart = document.getElementById('average').getContext('2d');
 
 
 function createWeeklyChart(dataName, date) {
+  let weeklyChart = document.getElementById('weekly').getContext('2d');
   let weeklyData = currentUser.dataSets[dataName].getWeekly(date)
   let newWeekly = new Chart(weeklyChart, {
     type: 'bar',
     options: {
+      responsive: true,
       maintainAspectRatio: false,
     },
     data: {
@@ -25,6 +26,7 @@ function createWeeklyChart(dataName, date) {
     }
   })
   Chart.defaults.global.defaultFontColor = 'black';
+  Chart.defaults.global.animation
 }
 
 function createAverageSleepChart() {

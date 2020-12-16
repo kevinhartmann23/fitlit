@@ -12,6 +12,10 @@ class UserRepo {
     return this.getUserData(id).name
   }
 
+  getUserId(name) {
+    return this.userData.find(user => user.name.toUpperCase() === name.toUpperCase())
+  }
+
 
   getStepGoalAverage() {
     let totalSteps = 0
@@ -19,6 +23,13 @@ class UserRepo {
       totalSteps += user.dailyStepGoal
     })
     return Math.ceil(totalSteps/this.userData.length)
+  }
+
+  getAllUserNames() {
+    return this.userData.reduce((acc, user) => {
+      acc.push(user.name.toUpperCase())
+      return acc;
+    }, []);
   }
 
   // getUserByName(name){

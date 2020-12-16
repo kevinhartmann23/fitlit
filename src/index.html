@@ -3,18 +3,20 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href = "styles.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>fitZen</title>
     <link rel="icon" href="../assets/imgs/logo-man.ico">
   </head>
   <body>
     <nav class="navigation-bar">
-      <div id="logo"><img id="logo" src="../assets/imgs/logo-man.ico" alt="fitZen Man"/></div>
-      <div class="nav-icons">
-        <img class="icons water" id="water-empty" src="../assets/imgs/water-glass-grey.png" alt="view hydration info"/>
-        <img class="icons sneaker" id="sneaker-empty" src="../assets/imgs/sneakers-grey.png" alt="view activity info"/>
-        <img class="icons bed" id="bed-empty" src="../assets/imgs/empty-bed-grey.png" alt="view sleep info"/>
+      <img class="logo hidden"id="logo" src="../assets/imgs/logo-man.ico" alt="fitZen Man"/>
+      <div class="nav-icons hidden">
+        <input type="date" id="date" onChange="updateDate()" value="2019-09-22" min="2019-06-15" max="2019-09-22">
+        <img class="icons sleep" id="sleep" src="../assets/imgs/empty-bed-grey.png" alt="view sleep info"/>
+        <img class="icons activity" id="activity" src="../assets/imgs/sneakers-grey.png" alt="view activity info"/>
+        <img class="icons hydration" id="hydration" src="../assets/imgs/water-glass-grey.png" alt="view hydration info"/>
         <div class="dropdown-menu">
           <img id="menu-hamburger" src="../assets/imgs/menu-icon.png" alt="menu"/>
           <div class="dropdown-content">
@@ -24,71 +26,29 @@
         </div>
       </div>
     </nav>
-    <div class="welcome-page hidden">
+    <section class="welcome-page">
       <img class="welcome-image" src="../assets/imgs/login-man.png" alt="fitZen Man"/>
       <h2>fitZen</h2>
       <input class="username-input" type="text" id="user-name-entry" placeholder="username">
       <br>
-      <button class="submit-button">login</button>
-    </div>
-    <div class="main-page hidden">
-    </div>
-    <div class="hydration-page">
-      <section class="friends-sidebar">
-        <h3 class="friends-title">friends</h3>
-        <div class="friend-section">
-          <img class="user-icon" src="../assets/imgs/user-icon.png" alt="user"/>
-          <p class="friend-name">friend 1</p>
-          <p class="friend-info">water consumed this week: 1000oz</p>
-        </div>
-        <div class="friend-section">
-          <img class="user-icon" src="../assets/imgs/user-icon.png" alt="user"/>
-          <p class="friend-name">friend 1</p>
-          <p class="friend-info">water consumed this week: 1000oz</p>
-        </div>
-        <div class="friend-section">
-          <img class="user-icon" src="../assets/imgs/user-icon.png" alt="user"/>
-          <p class="friend-name">friend 1</p>
-          <p class="friend-info">water consumed this week: 1000oz</p>
-        </div>
-        <div class="friend-section">
-          <img class="user-icon" src="../assets/imgs/user-icon.png" alt="user"/>
-          <p class="friend-name">friend 1</p>
-          <p class="friend-info">water consumed this week: 1000oz</p>
-        </div>
-        <div class="friend-section">
-          <img class="user-icon" src="../assets/imgs/user-icon.png" alt="user"/>
-          <p class="friend-name">friend 1</p>
-          <p class="friend-info">water consumed this week: 1000oz</p>
-        </div>
-      </section>
-      <div class="chart-container">
-        <canvas class="weekly-hydration" id="weekly"></canvas>
+      <button class="submit-button" id="main">login</button>
+    </section>
+    <section class="main-page hidden">
+      <div class="main-wrapper">
+        <h1 class="main-message" id="main-message">Welcome to fitZen, Kevin!</h1>
+        <img class="main-image" src="../assets/imgs/man-empty.png" alt="fitZen Man"/>
+        <img class="icons hydration" id="hydration2" src="../assets/imgs/water-glass-grey.png" alt="view hydration info"/>
+        <img class="icons activity" id="activity2" src="../assets/imgs/sneakers-grey.png" alt="view activity info"/>
+        <img class="icons sleep" id="sleep2" src="../assets/imgs/empty-bed-grey.png" alt="view sleep info"/>
       </div>
-      <div class="circle-wrapper other">
-        <div class="circle-display" id="hydration-today">
-          <h1 class="info-text">21oz</h1>
-          <p>other info</p>
-          <h4>other time</h4>
-        </div>
-      </div>
-      <div class="circle-wrapper weekly">
-        <div class="circle-display" id="hydration-today">
-          <h1 class="info-text">21oz</h1>
-          <p>water consumed</p>
-          <h4>LAST 7 DAYS</h4>
-        </div>
-      </div>
-      <div class="circle-wrapper daily">
-        <div class="circle-display" id="hydration-today">
-          <h1 class="info-text">21oz</h1>
-          <p>water consumed</p>
-          <h4>TODAY</h4>
-        </div>
-      </div>
-      <img class="hydration-man" src="../assets/imgs/man-hydra.png" alt="logo hyrdation"/>
+    </section>
+    <section class="display-page hidden"></section>
 
-    </div>
+    <section class="info-card hidden">
+      <span class="info-header">Account Information</span>
+      <img class="exit-menu" id="x" src="../assets/imgs/exit-inactive.png" alt="exit"/>
+      <h1 class="user-info"></h1>
+    </section>
 
 
     <script type="text/javascript" src="../data/users.js"></script>
@@ -111,5 +71,6 @@
     <script type="text/javascript" src="./scripts.js"></script>
     <script type="text/javascript" src="./dataHelpers.js"></script>
     <script type="text/javascript" src="./chartHelpers.js"></script>
+    <script type="text/javascript" src="./domHelpers.js"></script>
   </body>
 </html>
