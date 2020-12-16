@@ -13,7 +13,7 @@ class UserRepo {
   }
 
   getUserId(name) {
-    return this.userData.find(user => user.name === name)
+    return this.userData.find(user => user.name.toUpperCase() === name.toUpperCase())
   }
 
 
@@ -23,6 +23,13 @@ class UserRepo {
       totalSteps += user.dailyStepGoal
     })
     return Math.ceil(totalSteps/this.userData.length)
+  }
+
+  getAllUserNames() {
+    return this.userData.reduce((acc, user) => {
+      acc.push(user.name.toUpperCase())
+      return acc;
+    }, []);
   }
 
   // getUserByName(name){

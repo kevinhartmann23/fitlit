@@ -38,8 +38,16 @@ let currentUser;
 let htmlData;
 const allUserData = new UserRepo(userData)
 
+function usernameNotFound(input) {
+  if(!allUserData.getAllUserNames().includes(input.toUpperCase())){
+    userInput.value = ''
+    return alert(`username: ${input} does not exist, please try again!`)
+  }
+}
+
 function userLogin () {
-  user = allUserData.getUserId(userInput.value)
+  user = allUserData.getUserId(userInput.value.toUpperCase())
+  usernameNotFound(userInput.value)
   currentUser = new User(user)
   navigationIcons.classList.toggle('hidden')
   userInput.value = ''
