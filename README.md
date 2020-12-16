@@ -49,43 +49,68 @@ Below is a layout of our data architecture:
 You will also find we added a few other files to create a better user experience!
 - `chartHelpers.js` - using a additional dependency we built charts to display user information
 - `friend.js` - adding a friend file, allowed us to gather a user's friend information based on the filtered data
+- `dataHelpers.js` - dataHelpers streamlined our `script.js` adding `htmlData` objects to store page information allowed us to interpolate a single page with selected information.
+- `domHelpers.js` - domHelpers works along side `script.js` and `dataHelpers` to streamline DOM manipulation
 
 ### Technologies Used
 - javascript
--
+- HTML
+- CSS
+- github & github projects
+- charts.js
+- TDD
+- linter
+- icon8.com (image/vector/icon reference)
 
 [Back to Top of Page](#table-of-contents)
 
 ## Using fitZen
 
 #### Login Page
-On page load, you are greeted by a login page. This is currently designed to enter a given name from the user's data file. Typing a user's name, then clicking the login button will allow a user access to their information.
+On page load, you are greeted by a login page. This is currently designed to enter a given name from the user's data file. Typing a user's name, then clicking the login button will allow a user access to their information. We have added a few extra features, allowing a user to enter their name in any form (uppercase, lowercase, etc), and providing an alert if the user's full name is not recognized.
 ------ INSERT IMAGE/GIF HERE ----------
-Future Iterations: We plan to add usernames and passwords to our data, and allow a user to enter a password for user security.
+Future Iterations:
+- Usernames and Passwords: _adding a unique username to our data, and allow a user to enter a password for user security._
+- Create an account: _allowing new user's to input their user information as a new user._
+
+#### Navigation Bar
+The navigation bar will remain along all sections of the page, its functionality and icons vary based on the page the user is currently viewing:
+- Login Page: _no icons available_
+- Main Page: _**icons** for filtering each data page, a **calendar** to change the date of the data a user is viewing, **hamburger menu** for a user to view their account information or logout_
+- Data Pages: _all icons above, with an additional smaller **fitZen mascot** which allows you to return to your main page._
+------ INSERT IMAGE/GIF HERE ----------
 
 #### Welcome Page
-Once a user has logged in, the main page displays a users friends and our meditating mascot! The bubbles surrounded by the fitZen mascot are populated with a **water glass** representing a user's hydration, a **running shoe** representing a user's activity, and a **bed** representing a user's sleep. You can also find smaller icons in the top right corner of the window for quick access and filtration of data.
+Once a user has logged in, the main page displays fitZen's meditating mascot! The bubbles surrounded by the fitZen mascot are populated with a **water glass** representing a user's hydration, a **running shoe** representing a user's activity, and a **bed** representing a user's sleep. You can also find smaller icons in the top right corner of the window for quick access and filtration of data.
 ------ INSERT IMAGE/GIF HERE ----------
-Future Iterations: ??
+Future Iterations:
+- TBD
 
 #### Filtering Data
-On click of any icon, the icon will change colors and the window will populate data a user is choosing to view. The friend's section will now show a leaderboard of who is ahead in the totals based on each page visited!
+On click of any icon, the icon will change colors and the window will populate data a user is choosing to view. The will see a **friends section** displaying all of the user's friends, and their data based on chosen view. On the main area of the page the user will see **3 widgets** displaying data specific to the data requested, and a **bar graph** displaying a week view of the specific data.
 ------ INSERT IMAGE/GIF HERE ----------
-Future Iterations: ??
+Future Iterations:
+- User Profile Pictures: _allow each user to upload an image for their profile picture, each user's friends would populate their profile picture in place of the icon, setting the icon to a default._
+- Exploring Donut Graphs: _Adding donut graphs as a border around each image to show the user how close they are to achieving their goals._
 
-#### Hamburger Menu
-At the very top right there is a small menu icon, when a user hover's over this icon they are give the option to view their information or logout!
+#### User Account Information
+At the very top right there is a small menu icon, when a user hover's over this icon they are give the option to view their information or logout! Selecting `Account` will display a user info card to show the user their given information: **id, name, email address, address, goals, and friends!**
 ------ INSERT IMAGE/GIF HERE ----------
-Future Iteration: We plan to add an edit feature to user's information for more accurate data display and better user experience.
+Future Iteration:
+- Update Information: _add an edit feature to user's information for more accurate data display and better user experience._
 
 [Back to Top of Page](#table-of-contents)
 
 ## Challenges & Wins
 
 ### Challenges
+- Time management: it's easy to focus all of our time on our project, and we did. Learning to delegate and separate time for other homework or practice could have helped us outside of our project scope.
 
 ### Wins/Reflections
-
+- Responsiveness! We took some time to dive into Responsiveness and we are glad we did.
+- Data Model & DOM: taking the time to really think and plan these out made a huge difference, it allowed us to get ahead of the game in the long run and focus on features and issues we may not have thought we would have the time for.
+- Planning: using github projects to the fullest (issues, milestones, etc), really kept us on top of what to do and where to start.
+- Communication: We worked extremely well together, and had fun doing it.
 
 
 [Back to Top of Page](#table-of-contents)
