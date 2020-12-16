@@ -9,7 +9,7 @@ function generatePage(type) {
       ${generateFriendList(type)}
     </section>
     <div class="chart-container">
-      <canvas class="weekly" id="weekly"></canvas>
+      <canvas class="weekly-chart" id="weekly"></canvas>
     </div>
     <div class="circle-wrapper weekly">
       <div class="circle-display ${data.widget}">

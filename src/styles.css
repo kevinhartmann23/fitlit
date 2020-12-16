@@ -176,47 +176,56 @@ h2 {
   width: 100vw;
 }
 
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10.75em;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40em;
+  width: 50em;
+}
+
 .main-message {
   margin-top: 1.25em;
   font-size: 3em;
   text-align: center;
-  width: 100vw;
-}
-
-.main-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-}
-
-.main-image {
-  height: 38em;
-  width: 49em;
-  align-self: center;
 }
 
 #hydration2 {
-  position: absolute;
-  top: 43%;
-  left: 28%;
+  position: relative;
+  top: -27em;
+  right: -38.5em;
   transform: scale(1.5)
 }
 
 #activity2 {
-  position: absolute;
-  top: 22%;
-  left: 47%;
-  transform: scale(1.5)
+  position: relative;
+  top: -40.5em;
+  left: 22em;
+  transform: scale(1.5);
+  animation: activity  infinite 2s;
 }
 
+@keyframes activity {
+  0% {
+    transform: rotate(25deg) translateX(15px) translateY(-20px) scale(1.5)
+  }
+  50% {
+    transform: rotate(0deg) translateX(0px) translateY(0px) scale(1.5)
+  }
+  100% {
+    transform: rotate(-25deg) translateX(-15px) translateY(-20px) scale(1.5)
+  }
+}
+
+
+
 #sleep2 {
-  position: absolute;
-  top: 40%;
-  right: 28%;
+  position: relative;
+  top: -35.5em;
+  left: 5.5em;
   transform: scale(1.5)
 }
 
@@ -289,7 +298,6 @@ h2 {
 
 .chart-container {
   padding: .5em;
-  /* width: 100%; */
   grid-area: chartbox;
   align-self: flex-start;
 }
@@ -305,7 +313,6 @@ h2 {
 
 .daily {
   grid-area: dailybox;
-
   width: 100%
 }
 
@@ -316,11 +323,6 @@ h2 {
 
   width: 100%
 }
-
-/* .other {
-  grid-area: weeklybox;
-  display: none
-} */
 
 .circle-display {
   display: flex;
@@ -373,10 +375,13 @@ h4 {
 .info-card {
   position: fixed;
   padding: 1em;
-  left: 35%;
+  /* left: 35%;
   top: 25%;
-  width: 30%;
-  /* height: 45%; */
+  width: 30%; */
+  margin-right: 22.5em;
+  margin-left: 22.5em;
+  /* left: 22.5em; */
+  top: 10em;
   z-index: 5;
   background-color: #899991;
   text-align: center;
@@ -390,9 +395,13 @@ h4 {
 }
 
 .exit-menu {
-  position: fixed;
-  left: 65.5%;
-  top: 25.5%
+  position: relative;
+  left: 6.5em;
+  top: .25em
+}
+
+.exit-menu:hover {
+  content: url("../assets/imgs/exit-red.png")
 }
 
 .exit-menu:hover {
@@ -404,7 +413,7 @@ h4 {
   filter:blur(5px);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1275px) {
   .sleep-page,
   .activity-page,
   .hydration-page,
@@ -454,25 +463,102 @@ h4 {
     transform: scale(.75);
     align-self: center;
   }
+
+  .info-card {
+    transform: scale(.8);
+    margin-right: 10em;
+    margin-left: 10em;
+    width: auto;
+  }
+
+  .exit-menu {
+    left: 2.75em;
+    top: .125em
+  }
 }
 
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 768px) {
   .sleep-page,
   .activity-page,
   .hydration-page,
-  .display-page {
+  .display-page,
+  .main-page {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
   .friends-sidebar {
-    margin-top: 5.25em;
+    flex-direction: column;
+    height: 60em;
+    width: 15em;
+  }
+
+  .friend-section {
+    transform: scale(.75)
+  }
+
+  .circle-wrapper {
+    display: flex;
+    flex-direction: column;
   }
 
   .chart-container {
-    height: 376px;
-    width: 752px
+    transform: scaleY(.25, .25);
+    height: 282px;
+    width: 526px;
+  }
+
+  .logo-man {
+    transform: scale(.5);
+  }
+
+  #logo {
+    display: none;
+  }
+
+  .main-wrapper {
+    margin: 4.25em;
+    align-self: center;
+    transform: scale(.75)
+  }
+
+  .info-card {
+    transform: scale(.8);
+    margin-right: 0em;
+    margin-left: 0em;
+    width: auto;
+  }
+
+  .exit-menu {
+    left: 6.25em;
+    top: .125em
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .sleep-page,
+  .activity-page,
+  .hydration-page,
+  .display-page,
+  .main-page {
+    transform: scale(.9)
+  }
+
+  .friends-sidebar {
+    margin: 2.5em;
+  }
+
+  .info-card {
+    transform: scale(.8);
+    margin-right: 0em;
+    margin-left: 0em;
+    width: auto;
+  }
+
+  .exit-menu {
+    left: 2.25em;
+    top: 1em
   }
 }
