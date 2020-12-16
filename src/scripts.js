@@ -51,6 +51,7 @@ function populatePage(event) {
   type = event.target.classList[1]
   let page = generatePage(type)
   mainPage.classList.add('hidden')
+  pageDisplay.classList.remove('hidden')
   pageDisplay.innerHTML = page
   createWeeklyChart(type, date)
 }
@@ -87,9 +88,11 @@ function logOut() {
   pageDisplay.innerHTML = ''
   loginPage.classList.toggle('hidden')
   navigationIcons.classList.toggle('hidden')
+  pageDisplay.classList.add('hidden')
 }
 
 function blurBackground() {
   navigationBar.classList.toggle('blur')
   pageDisplay.classList.toggle('blur')
+  mainPage.classList.toggle('blur')
 }
