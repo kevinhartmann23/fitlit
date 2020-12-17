@@ -6,7 +6,9 @@ function generatePage(type) {
   <section class="${data.class}" id="${data.type}">
     <section class="friends-sidebar ${data.widget}">
       <h2 class="friends-title">Friends</h2>
-      ${generateFriendList(type)}
+      <div class="friend-list-wrapper">
+        ${generateFriendList(type)}
+      </div>  
     </section>
     <div class="chart-container">
       <canvas class="weekly-chart" id="weekly"></canvas>

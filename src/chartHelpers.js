@@ -1,7 +1,22 @@
 let averageChart = document.getElementById('average').getContext('2d');
 
+function getChartStyling(type) {
+  switch(type) {
+    case type === 'hydration'
+      return
+  switch(type) {
+    case type === 'sleep'
+      return
+  switch(type) {
+    case type === 'activity'
+      return
+  }
+}
+
 
 function createWeeklyChart(dataName, date) {
+  debugger
+  let styling = checkChartStyling(dataName)
   let weeklyChart = document.getElementById('weekly').getContext('2d');
   let weeklyData = currentUser.dataSets[dataName].getWeekly(date)
   let newWeekly = new Chart(weeklyChart, {
