@@ -7,7 +7,7 @@ class UserHydration {
   getTotalAverage() {
     let total = 0
     this.data.forEach(day => total += day.numOunces)
-    return Math.round(total/this.data.length)
+    return Math.round(total / this.data.length)
   }
 
   getDailyHydration(date) {
@@ -34,8 +34,6 @@ class UserHydration {
     let weeklyTotal = 0
     this.data.forEach(day => {
       let currentDay = Date.parse(day['date'])
-      let currentWeekday = day.date.split('/')
-      let newWeekday = new Date(currentWeekday[0], currentWeekday[1] - 1, currentWeekday[2])
       if ((startDate < currentDay) && (currentDay <= stopDate)) {
         weeklyTotal += day.numOunces
       }
