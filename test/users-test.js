@@ -1,8 +1,6 @@
 const testData = require('./test-data')
 const chai = require('chai')
 const expect = chai.expect
-const assert = chai.assert
-
 
 const UserRepo = require('../src/userRepo')
 const User = require('../src/user')
@@ -17,17 +15,17 @@ describe('UserRepo', () => {
     userData = testData['userData']
     userRepo = new UserRepo(userData)
     user1Data = {
-        "id": 1,
-        "name": "Luisa Hane",
-        "address": "15195 Nakia Tunnel, Erdmanport VA 19901-1697",
-        "email": "Diana.Hayes1@hotmail.com",
-        "strideLength": 4.3,
-        "dailyStepGoal": 10000,
-        "friends": [
-          16,
-          4,
-          8
-        ]}
+      "id": 1,
+      "name": "Luisa Hane",
+      "address": "15195 Nakia Tunnel, Erdmanport VA 19901-1697",
+      "email": "Diana.Hayes1@hotmail.com",
+      "strideLength": 4.3,
+      "dailyStepGoal": 10000,
+      "friends": [
+        16,
+        4,
+        8
+      ]}
     user1 = new User(user1Data);
   })
 

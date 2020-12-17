@@ -4,7 +4,6 @@ class UserRepo {
   }
 
   getUserData(id) {
-    //change parameter to name, access name - return id
     return this.userData.find(user => user.id === id)
   }
 
@@ -13,7 +12,9 @@ class UserRepo {
   }
 
   getUserId(name) {
-    return this.userData.find(user => user.name.toUpperCase() === name.toUpperCase())
+    return this.userData.find(user => {
+      return user.name.toUpperCase() === name.toUpperCase()
+    })
   }
 
 
@@ -22,7 +23,7 @@ class UserRepo {
     const average = this.userData.forEach(user => {
       totalSteps += user.dailyStepGoal
     })
-    return Math.ceil(totalSteps/this.userData.length)
+    return Math.ceil(totalSteps / this.userData.length)
   }
 
   getAllUserNames() {
@@ -31,14 +32,6 @@ class UserRepo {
       return acc;
     }, []);
   }
-
-  // getUserByName(name){
-  //   this.userData.find(user => {
-  //     if(user.name === name){
-  //       return this.getUserData(user.id)
-  //     }
-  //     });
-  // }
 }
 
 if (typeof module !== 'undefined') {
