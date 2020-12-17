@@ -7,7 +7,7 @@ class UserActivity {
   getTotalAverage() {
     let total = 0
     this.data.forEach(day => total += day.numSteps)
-    return Math.round(total/this.data.length)
+    return Math.round(total / this.data.length)
   }
 
   getDailyMinutes(date) {
@@ -29,13 +29,12 @@ class UserActivity {
     let numDays = 0
     this.data.forEach(day => {
       let currentDay = Date.parse(day['date'])
-      let currentWeekday = day.date.split('/')
       numDays++
       if ((startDate < currentDay) && (currentDay <= stopDate)) {
         weeklyActivity += day.minutesActive
       }
     })
-    return weeklyActivity/numDays
+    return weeklyActivity / numDays
   }
 
   getWeekly(date) {
@@ -57,7 +56,9 @@ class UserActivity {
   }
 
   getStairRecord() {
-    let record = (this.data.sort((a,b) => {return b.flightsOfStairs - a.flightsOfStairs}))
+    let record = (this.data.sort((a,b) => {
+      return b.flightsOfStairs - a.flightsOfStairs
+    }))
     return record[0].flightsOfStairs
   }
 
@@ -67,15 +68,12 @@ class UserActivity {
     let weeklyTotal = 0
     this.data.forEach(day => {
       let currentDay = Date.parse(day['date'])
-      let currentWeekday = day.date.split('/')
-      let newWeekday = new Date(currentWeekday[0], currentWeekday[1] - 1, currentWeekday[2])
       if ((startDate < currentDay) && (currentDay <= stopDate)) {
         weeklyTotal += day.numSteps
       }
     })
     return weeklyTotal;
   }
-
 }
 
 if (typeof module !== 'undefined') {
