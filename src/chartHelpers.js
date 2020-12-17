@@ -7,23 +7,19 @@ function createWeeklyChart(dataName, date) {
   let newWeekly = new Chart(weeklyChart, {
     type: 'bar',
     options: {
-      responsive: true,
-      maintainAspectRatio: false,
+      title: {
+        text: `weekly ${dataName}`,
+        display: true
+      },
     },
     data: {
       labels: Object.keys(weeklyData),
-      datasets : [{
+      datasets: [{
         label: `daily ${dataName} - week starting on: ${Object.keys(weeklyData)[0]}`,
-        data : Object.values(weeklyData),
+        data: Object.values(weeklyData),
         backgroundColor: 'lightgrey',
       }]
     },
-    options: {
-      title : {
-        text: `weekly ${dataName}`,
-        display : true
-      }
-    }
   })
   Chart.defaults.global.defaultFontColor = 'black';
   Chart.defaults.global.animation
@@ -37,21 +33,20 @@ function createAverageSleepChart() {
     type: 'bar',
     data: {
       labels: ['Hours Slept', 'Sleep Quality'],
-      datasets : [{
+      datasets: [{
         labels: false,
-        data : averages,
+        data: averages,
         backgroundColor: '#7190B9'
       }]
     },
     options: {
-      title : {
-        display: false,
+      title: {
         text: `Average Sleep Data`,
-        display : true,
+        display: true,
       }
     },
     legend: {
-      display : false
+      display: false
     }
   })
 }
@@ -65,16 +60,16 @@ function createAverageActivityChart() {
     type: 'bar',
     data: {
       labels: Object.keys(averages),
-      datasets : [{
+      datasets: [{
         label: `${dataName} for the week of ${Object.keys(weeklyData)[0]}`,
-        data : Object.values(averages),
+        data: Object.values(averages),
         backgroundColor: '#7190B9'
       }]
     },
     options: {
-      title : {
+      title: {
         text: `Average ${dataName}`,
-        display : true
+        display: true
       }
     }
   })
