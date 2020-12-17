@@ -51,12 +51,12 @@ function generateFriendList(type) {
 }
 
 function getFriendDataInfo(type) {
-  switch(type) {
-    case 'hydration':
-      return 'Water consumed this week:'
-    case 'sleep':
-      return 'Hours slept this week:'
-    case 'activity':
-      return 'Total steps this week:'
+  switch (type) {
+  case 'hydration':
+    return 'Water consumed this week:'
+  case 'sleep':
+    return 'Hours slept this week:'
+  case 'activity':
+    return 'Total steps this week:'
   }
 }
