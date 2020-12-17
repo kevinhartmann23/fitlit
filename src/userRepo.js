@@ -13,7 +13,7 @@ class UserRepo {
 
   getUserId(name) {
     return this.userData.find(user => {
-      user.name.toUpperCase() === name.toUpperCase()
+      return user.name.toUpperCase() === name.toUpperCase()
     })
   }
 

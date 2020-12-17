@@ -39,7 +39,7 @@ let htmlData;
 const allUserData = new UserRepo(userData)
 
 function usernameNotFound(input) {
-  if(!allUserData.getAllUserNames().includes(input.toUpperCase())){
+  if (!allUserData.getAllUserNames().includes(input.toUpperCase())) {
     userInput.value = ''
     return alert(`username: ${input} does not exist, please try again!`)
   }

@@ -33,6 +33,19 @@ class UserSleep {
     return weeklyQuality;
   }
 
+  getWeekly(date) {
+    const startDate = Date.parse(date) - 604800000
+    const stopDate = Date.parse(date)
+    let weeklySleep = {}
+    this.data.forEach(day => {
+      let currentDay = Date.parse(day['date'])
+      if ((startDate < currentDay) && (currentDay <= stopDate)) {
+        weeklySleep[day.date] = day.hoursSlept
+      }
+    })
+    return weeklySleep;
+  }
+
   getWeeklyTotal(date) {
     const startDate = Date.parse(date) - 604800000
     const stopDate = Date.parse(date)

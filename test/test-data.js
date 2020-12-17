@@ -1,3 +1,4 @@
+/* eslint-disable */
 const userData = [
   {
     "id": 1,
