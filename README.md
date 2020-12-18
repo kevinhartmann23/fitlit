@@ -106,7 +106,7 @@ Future Iterations:
 #### User Account Information
 At the very top right there is a small menu icon, when a user hover's over this icon they are give the option to view their information or logout! Selecting `Account` will display a user info card to show the user their given information: **id, name, email address, address, goals, and friends!**
 
-![user info example gif]()
+![user info example gif](https://media.giphy.com/media/l0r1wKglRU298nslKx/giphy.gif)
 
 Future Iteration:
 - Update Information: _add an edit feature to user's information for more accurate data display and better user experience._
