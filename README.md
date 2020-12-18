@@ -72,7 +72,7 @@ You will also find we added a few other files to create a better user experience
 
 #### Login Page
 On page load, you are greeted by a login page. This is currently designed to enter a given name from the user's data file. Typing a user's name, then clicking the login button will allow a user access to their information. We have added a few extra features, allowing a user to enter their name in any form (uppercase, lowercase, etc), and providing an alert if the user's full name is not recognized.
-![login page example gif]()
+![login page example gif](https://media.giphy.com/media/llyx2CbXAPdWkQAYfG/giphy.gif)
 Future Iterations:
 - Usernames and Passwords: _adding a unique username to our data, and allow a user to enter a password for user security._
 - Create an account: _allowing new user's to input their user information as a new user._
