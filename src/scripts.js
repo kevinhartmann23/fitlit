@@ -64,7 +64,6 @@ function backToMain () {
 }
 
 function populatePage(event) {
-  console.log('test')
   type = event.target.classList[1]
   let page = generatePage(type)
   mainPage.classList.add('hidden')
