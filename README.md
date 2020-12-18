@@ -98,7 +98,7 @@ Future Iterations:
 #### Filtering Data
 On click of any icon, the icon will change colors and the window will populate data a user is choosing to view. The will see a **friends section** displaying all of the user's friends, and their data based on chosen view. On the main area of the page the user will see **3 widgets** displaying data specific to the data requested, and a **bar graph** displaying a week view of the specific data.
 
-![data page example gif]()
+![data page example gif](https://media.giphy.com/media/H1hz8Go5T0LD2NSlzy/giphy.gif)
 
 Future Iterations:
 - User Profile Pictures: _allow each user to upload an image for their profile picture, each user's friends would populate their profile picture in place of the icon, setting the icon to a default._
