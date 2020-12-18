@@ -22,7 +22,7 @@ The details of this project are outline in [this project spec](http://frontend.t
 
 ## Setup Instructions
 
-- For easy use and access visit our deployed site [here]()
+- For easy use and access visit our deployed site [here](https://kevinhartmann23.github.io/fitlit/src/index.html)
 
 If you are interested in browsing our code or contributing, follow the steps below:
   1. Fork this repo - on the top right corner of this page, click the **Fork** button.
@@ -70,7 +70,7 @@ You will also find we added a few other files to create a better user experience
 
 ## Using fitZen
 
-#### Login Page
+## Login Page
 On page load, you are greeted by a login page. This is currently designed to enter a given name from the user's data file. Typing a user's name, then clicking the login button will allow a user access to their information. We have added a few extra features, allowing a user to enter their name in any form (uppercase, lowercase, etc), and providing an alert if the user's full name is not recognized.
 
 ![login page example gif](https://media.giphy.com/media/llyx2CbXAPdWkQAYfG/giphy.gif)
@@ -79,7 +79,7 @@ Future Iterations:
 - Usernames and Passwords: _adding a unique username to our data, and allow a user to enter a password for user security._
 - Create an account: _allowing new user's to input their user information as a new user._
 
-#### Navigation Bar
+## Navigation Bar
 The navigation bar will remain along all sections of the page, its functionality and icons vary based on the page the user is currently viewing:
 - Login Page: _no icons available_
 - Main Page: _**icons** for filtering each data page, a **calendar** to change the date of the data a user is viewing, **hamburger menu** for a user to view their account information or logout_
@@ -87,7 +87,7 @@ The navigation bar will remain along all sections of the page, its functionality
 
 ![nav bar example gif](https://media.giphy.com/media/Tj88gHEshTDUrPUfLc/giphy.gif)
 
-#### Welcome Page
+## Welcome Page
 Once a user has logged in, the main page displays fitZen's meditating mascot! The bubbles surrounded by the fitZen mascot are populated with a **water glass** representing a user's hydration, a **running shoe** representing a user's activity, and a **bed** representing a user's sleep. You can also find smaller icons in the top right corner of the window for quick access and filtration of data.
 
 ![welcome page example gif](https://media.giphy.com/media/Tj88gHEshTDUrPUfLc/giphy.gif)
@@ -95,7 +95,7 @@ Once a user has logged in, the main page displays fitZen's meditating mascot! Th
 Future Iterations:
 - TBD
 
-#### Filtering Data
+## Filtering Data
 On click of any icon, the icon will change colors and the window will populate data a user is choosing to view. The will see a **friends section** displaying all of the user's friends, and their data based on chosen view. On the main area of the page the user will see **3 widgets** displaying data specific to the data requested, and a **bar graph** displaying a week view of the specific data.
 
 ![data page example gif](https://media.giphy.com/media/H1hz8Go5T0LD2NSlzy/giphy.gif)
@@ -104,7 +104,7 @@ Future Iterations:
 - User Profile Pictures: _allow each user to upload an image for their profile picture, each user's friends would populate their profile picture in place of the icon, setting the icon to a default._
 - Exploring Donut Graphs: _Adding donut graphs as a border around each image to show the user how close they are to achieving their goals._
 
-#### User Account Information
+## User Account Information
 At the very top right there is a small menu icon, when a user hover's over this icon they are give the option to view their information or logout! Selecting `Account` will display a user info card to show the user their given information: **id, name, email address, address, goals, and friends!**
 
 ![user info example gif](https://media.giphy.com/media/l0r1wKglRU298nslKx/giphy.gif)
