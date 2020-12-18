@@ -84,6 +84,7 @@ The navigation bar will remain along all sections of the page, its functionality
 - Login Page: _no icons available_
 - Main Page: _**icons** for filtering each data page, a **calendar** to change the date of the data a user is viewing, **hamburger menu** for a user to view their account information or logout_
 - Data Pages: _all icons above, with an additional smaller **fitZen mascot** which allows you to return to your main page._
+
 ![nav bar example gif](https://media.giphy.com/media/Tj88gHEshTDUrPUfLc/giphy.gif)
 
 #### Welcome Page
