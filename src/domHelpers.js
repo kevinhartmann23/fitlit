@@ -55,7 +55,7 @@ function generateFriendList(type) {
 function getFriendDataInfo(type) {
   switch (type) {
   case 'hydration':
-    return 'water consumed this week:'
+    return 'water oz consumed this week:'
   case 'sleep':
     return 'hours slept this week:'
   case 'activity':
