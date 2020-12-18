@@ -8,7 +8,7 @@ function generatePage(type) {
       <h2 class="friends-title">Friends</h2>
       <div class="friend-list-wrapper">
         ${generateFriendList(type)}
-      </div>  
+      </div>
     </section>
     <div class="chart-container">
       <canvas class="weekly-chart" id="weekly"></canvas>
@@ -55,10 +55,10 @@ function generateFriendList(type) {
 function getFriendDataInfo(type) {
   switch (type) {
   case 'hydration':
-    return 'Water consumed this week:'
+    return 'water consumed this week:'
   case 'sleep':
-    return 'Hours slept this week:'
+    return 'hours slept this week:'
   case 'activity':
-    return 'Total steps this week:'
+    return 'total steps this week:'
   }
 }

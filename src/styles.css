@@ -17,6 +17,7 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0em;
+  overflow: hidden;
 }
 
 .hidden {
@@ -380,26 +381,6 @@ h2 {
   min-width: 19em;
 }
 
-
-
-@keyframes ring {
-  0% {
-    box-shadow: inset -2px 0 5px 13px;
-  }
-  25% {
-    box-shadow: inset 0 2px 5px 13px;
-  }
-  50% {
-    box-shadow: inset 2px 0 5px 13px;
-  }
-  75% {
-    box-shadow: inset 0 -2px 5px 13px;
-  }
-  100% {
-    box-shadow: inset -2px 0 5px 13px;
-  }
-}
-
 /* Specific Info Styling*/
 
 .hydration-widget {
@@ -451,12 +432,8 @@ h4 {
 .info-card {
   position: fixed;
   padding: 1em;
-  /* left: 35%;
-  top: 25%;
-  width: 30%; */
   margin-right: 22.5em;
   margin-left: 22.5em;
-  /* left: 22.5em; */
   top: 10em;
   z-index: 5;
   background-color: #899991;
@@ -489,7 +466,12 @@ h4 {
   filter:blur(5px);
 }
 
+/*MEDIA QUERIES - SMALLER SCREENS*/
 @media screen and (max-width: 1275px) {
+  body {
+    overflow: scroll;
+  }
+
   .sleep-page,
   .activity-page,
   .hydration-page,
@@ -507,7 +489,7 @@ h4 {
     flex-direction: row;
     height: 9em;
     justify-content: center;
-    width: 45em;
+    width: 15em;
   }
 
   .friends-title {
@@ -541,6 +523,7 @@ h4 {
     align-self: center;
   }
 
+/*ACCOUNT INFO CARD*/
   .info-card {
     transform: scale(.8);
     margin-right: 10em;
@@ -554,7 +537,7 @@ h4 {
   }
 }
 
-
+/*SCREEN FOR TABLETS*/
 @media screen and (max-width: 768px) {
   .sleep-page,
   .activity-page,
@@ -614,6 +597,7 @@ h4 {
   }
 }
 
+/* SMALLER SCREEN */
 @media screen and (max-width: 550px) {
   .sleep-page,
   .activity-page,
@@ -629,6 +613,47 @@ h4 {
 
   .info-card {
     transform: scale(.8);
+    margin-right: 0em;
+    margin-left: 0em;
+    width: auto;
+  }
+
+  .exit-menu {
+    left: 2.25em;
+    top: 1em
+  }
+}
+
+/* SCREEN FOR ANTS */
+@media screen and (max-width: 414px) {
+  .sleep-page,
+  .activity-page,
+  .hydration-page,
+  .display-page,
+  .main-page {
+    transform: scale(.75)
+  }
+
+  .friends-sidebar {
+    margin: 2.5em;
+  }
+
+  .nav-icons {
+    justify-content: space-between;
+  }
+
+  #sleep,
+  #hydration,
+  #activity,
+  #date,
+  #menu-hamburger {
+    margin: 0em;
+    padding: 0em;
+    transform: scale(.7)
+  }
+
+  .info-card {
+    transform: scale(.6);
     margin-right: 0em;
     margin-left: 0em;
     width: auto;

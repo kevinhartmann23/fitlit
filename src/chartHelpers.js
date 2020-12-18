@@ -1,22 +1,16 @@
-let averageChart = document.getElementById('average').getContext('2d');
-
 function getChartStyling(type) {
   switch(type) {
-    case type === 'hydration'
-      return
-  switch(type) {
-    case type === 'sleep'
-      return
-  switch(type) {
-    case type === 'activity'
-      return
+  case 'hydration':
+    return '#7190B9'
+  case 'sleep':
+    return '#967BB6'
+  case 'activity':
+    return '#C27382'
   }
 }
 
 
 function createWeeklyChart(dataName, date) {
-  debugger
-  let styling = checkChartStyling(dataName)
   let weeklyChart = document.getElementById('weekly').getContext('2d');
   let weeklyData = currentUser.dataSets[dataName].getWeekly(date)
   let newWeekly = new Chart(weeklyChart, {
@@ -32,7 +26,7 @@ function createWeeklyChart(dataName, date) {
       datasets: [{
         label: `daily ${dataName} - week starting on: ${Object.keys(weeklyData)[0]}`,
         data: Object.values(weeklyData),
-        backgroundColor: 'lightgrey',
+        backgroundColor: getChartStyling(dataName),
       }]
     },
   })
